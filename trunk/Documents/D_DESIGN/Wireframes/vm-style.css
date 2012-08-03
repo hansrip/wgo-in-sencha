@@ -1,0 +1,12 @@
+div.vm-header-logo {border-top-width:10px;border-top-style:solid;border-top-color:#008AFF;padding-top: 2px;padding-bottom: 5px;height: 65px;}
+.vm-footer-strip{border-bottom-color:#008AFF;border-bottom-width:50px;border-bottom-style:solid;}
+.vm-header-logo-text {font-family:Buxton Sketch; font-size: 25px;font-weight: bold;padding-left: 10px; color: #F01D4F;PADDING-TOP: 15px;}
+.vm-dot {webkit-border-radius: 10px;-moz-border-radius: 20px;-ms-border-radius: 20px;-o-border-radius: 20px;border-radius: 20px;-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.23);-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.23);box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.23);display: inline-block;height:40px;margin: 8px 0px 0 0px;width: 40px;background: #008AFF;text-align: center;vertical-align: middle;}
+.vm-dot-text{font-family:Buxton Sketch; font-size: 20px;font-weight: bold;vertical-align: middle; padding-top: 10px;color: #FFFFFF;}
+#post p {line-height: 20px;font-size: 12px;width: auto;text-align: justify;margin: 10px 0 10px 0;color: #555;font-family: "Helvetica Neue", Helvetica, sans-serif;}
+
+
+.vm-festival{font-family: Arial;font-size: 16px;}
+.vm-festtival-title {font-weight: bold;margin: 0px;color: rgb(39,39,39)}
+.vm-festtival-timings {float:right;color:#00B050;}
+.vm-festtival-content {overflow: hidden;padding-top: 2px;color: rgb(165,165,165);}
