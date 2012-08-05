@@ -1,0 +1,156 @@
+@charset "utf-8";
+    /* CSS Document */
+/* Reset from Blueprint */
+ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+	
+
+
+img, a, input {
+    behavior:  url(png_fix.htc);
+}
+
+ul {
+    list-style-type: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #000;
+    color: rgba(0, 0, 0, 1);
+}
+
+
+
+/* links */
+a:link, a:visited {
+    color: #004876;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000;
+}
+
+a:focus {
+    outline: none;
+}
+
+a.text_link {
+    font-weight: bold;
+    font-size: 11px !important;
+    text-decoration: underline !important;
+}
+
+a.text_link:hover {
+    ;
+}
+
+/*--- Events list ---*/
+.gray_tabs_container {
+    padding: 0;
+    background:  url(images/tabs_bg.gif) no-repeat bottom left;
+    margin-bottom: 8px;
+}
+
+.gtc_large_bg {
+    background:  url(images/tabs_bg_large.gif) no-repeat bottom left !important;
+}
+
+.gray_tabs_container .tabs_nav {
+    margin: 0 0 6px;
+    padding: 0;
+    height: 29px;
+}
+
+.gray_tabs_container .tabs_nav li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.gray_tabs_container .tabs_nav a {
+    display: block;
+    height: 29px;
+    text-transform: uppercase;
+    color: #666;
+    font-weight: normal;
+    text-align: left;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 20px;
+    padding: 0px 0 0 10px;
+    margin: 0 3px 0 0;
+}
+
+* html .gray_tabs_container {
+    background:  url(images/tabs_bg.gif) no-repeat -4px 13px;
+}
+
+* html .gray_tabs_container .tabs_nav {
+    margin-bottom: 0;
+}
+
+* html .gray_tabs_container .tabs_nav a {
+    float: left;
+    width: 1px;
+}
+
+.gray_tabs_container .tabs_nav span {
+    font-size: 11px !important;
+    font-style: normal !important;
+    height: 26px;
+    display: block;
+    padding: 5px 10px 0 0 !important;
+    margin: 0 !important;
+}
+
+.gray_tabs_container .tabs_nav .on a {
+    background: transparent url(images/sprites_01.png) 0 0 no-repeat;
+    background-color: #FFF;
+}
+
+.gray_tabs_container .tabs_nav .on a span {
+    background: transparent url(images/tabsnav_corner.gif.png) top right no-repeat;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.tab_content{
+    padding-bottom: 18px;
+    padding-left:2px;
+    padding-top:20px;
+	float:left;
+}
+
+.event_rule, .offer_rule{
+    background: #FFF url(images/gre_divider_bg.gif) no-repeat bottom left;
+    padding: 5px 0 6px;
+}
+
+
+/* css png fixes */
+.fix_ie6png, .overlay{
+    behavior:  url(png_fix.htc);
+}
+
+.featured_content_div,.acdn_content,#tab2_content,#respondstatus{
+    display: none;
+}
+
+
+
