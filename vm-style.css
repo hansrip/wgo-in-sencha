@@ -9,11 +9,16 @@ div.vm-header-logo {border-top-width:10px;border-top-style:solid;border-top-colo
 /*Festival List Entry Styling*/
 .vm-festival-list-wrapper{position:absolute;width:100%;height:100%;}
 /*Div Class styling for the right side description box, added a border and float left*/
-.vm-festival{font-family: helvetica, Arial; font-size: 12px; padding:2px; ;overflow: hidden;height: 50px;}
+.vm-festival{font-family: helvetica, Arial; font-size: 12px; padding:2px;overflow: hidden;height: 50px;width: 80%}
 .vm-festival-title {font-weight: bold; margin: 0px;color: rgb(39,39,39);overflow: hidden;}
 .vm-festival-timings {font-weight: bold; float: right; color:#008AFF;padding-right: 10px;}
 .vm-festival-content {padding: 2px;color: rgb(165,165,165);}
 /*Div Class styling for the left side date box, added a border and float left*/
-.vm-datebox{float:left;display:inline;padding:5px; background:#F2F2F2; border:#F2F2F2 solid 3px;overflow: hidden;height: 50px;width:40px;}
+.vm-datebox{float:left;display:inline;padding:5px; background:#F2F2F2; border:#F2F2F2 solid 3px;overflow: hidden;height: 40px;width:10%;}
 .vm-date-datebox{font:18px arial bold;text-align:center;}
 .vm-dayofweek-datebox{font:10px Arial bold;text-align:center;vertical-align: middle;text-transform: uppercase;}
+
+/*Table less approach to display key-value details*/
+.vm-profile{font-family: Arial;font-size:12px;}
+.vm-profile-key{display:block;font-weight:bold;text-align:right;width:75px;float:left;}
+.vm-profile-value{float:left;font-size:12px;width:200px;margin:0px 0 0px 10px;color: rgb(165,165,165);}
