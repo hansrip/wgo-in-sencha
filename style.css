@@ -1,0 +1,211 @@
+#container {
+  margin:auto;
+  width: 100%; 
+  background: #ffffff;
+}
+
+#blue_header{
+background-color:#008AFF;
+height:10px;
+
+}
+
+#header {
+  background: #66AB16;
+  text-align:center;
+  font-family: Trebuchet MS,Arial, Helvetica;
+  font-size:18px;
+  font-weight:bolder;
+  padding-bottom:10px;
+  padding-top:10px;
+  color: #FFFFFF;
+}
+
+#logo{
+ background-color:#FFFFFF;
+ height:50px;
+ padding-bottom:5px;
+ padding-top:5px;
+ padding-left:5px;
+
+}
+
+
+#leftBar {
+  float: left; 
+ 
+}
+
+#content {
+	background-color:#FFFFFF;
+	margin:auto;
+
+}
+
+#rightBar { 
+  float:right; 
+  width: 160px; 
+  background: #EBEBEB; 
+}
+
+#footer { 
+  clear:both;
+  background:#DDDDDD;
+} 
+
+.logo_circle{
+  width:50px;
+  height:50px;
+  display:block;
+  border-radius:50px;
+  -moz-border-radius:50px;
+  -webkit-border-radius:50px;
+  -khtml-border-radius:50px;
+  font-family:comic sans ms;
+  font-size:20px;
+  font-weight:bold;
+  color:#fff;
+  line-height:45px;
+  text-align:center;
+  background:#008AFF;
+  float:left;
+}
+.logo_word{
+  float:left;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:25px;
+  font-weight:bold;
+  display:block;
+  text-align:center;
+  padding-bottom:10px;
+  padding-top:10px;
+  padding-left:10px;
+  color:#FF0000;
+}
+
+.logo_search{
+ float:right;
+ background-image:url(images/search_icon.png);
+ background-repeat:no-repeat;
+ width: 32px;
+ height: 50px;
+ background-position:center;
+ 
+}
+
+.leftbar{
+float:left;
+background-color:#CCCCCC;
+font-family: Trebuchet MS,Arial, Helvetica;
+font-size:25px;
+font-weight:bold;
+font-variant:small-caps;
+
+
+}
+.middlebar{
+float:left;
+
+}
+.rightbar{
+float:right;
+
+}
+
+.date{
+ font-family: Trebuchet MS,Arial, Helvetica;
+font-size:25px;
+font-weight:bold;
+text-align:center;
+}
+
+.content1{
+ font-family: Trebuchet MS,Arial, Helvetica;
+font-size:15px;
+font-weight:bold;
+text-align:left;
+}
+
+.content2{
+ font-family: Trebuchet MS,Arial, Helvetica;
+font-size:14px;
+font-weight:none;
+text-align:left;
+}
+
+.content3{
+ font-family: Trebuchet MS,Arial, Helvetica;
+font-size:12px;
+font-weight:none;
+text-align:left;
+color:#0084FF;
+}
+
+.content4{
+ float:right;
+ background-image:url(images/arrow.png);
+ background-repeat:no-repeat;
+ width: 22px;
+ height: 21px;}
+ 
+ 
+ 
+ 
+ ---------------------festival_detail.html-----------------------------------
+ .head{
+  background: #66AB16;
+  text-align:center;
+  font-family: Trebuchet MS,Arial, Helvetica;
+  font-size:18px;
+  font-weight:bolder;
+  padding-bottom:10px;
+  padding-top:10px;
+  color: #FFFFFF;
+}
+ 
+ .back{
+  float:left;
+  margin:0;
+  background-image:url(images/back_button.png);
+  background-repeat:no-repeat;
+  width: 41px;
+  height: 24px;
+ }
+ 
+ .details{
+ font-family:Arial, Helvetica, sans-serif;
+ font-size:12px;
+ font-weight:bold;
+ padding-left:2px;
+ }
+ 
+ .leftbox{
+ float:left;
+ font-family:Arial, Helvetica, sans-serif;
+ font-size:13px;
+ color:#CCCCCC;
+ padding-top:5px;
+ padding-bottom:5px;
+ padding-left:2px;
+ width:25%; 
+ margin: 0 auto;
+}
+
+.rightbox{
+ float:left;
+ font-family:Arial, Helvetica, sans-serif;
+ font-size:13px;
+ color:#000000;
+ padding-top:5px;
+ padding-bottom:5px;
+ padding-left:2px;
+ margin: 0 auto;
+
+}
+
+.text{
+ margin:0;
+ font-family:Arial, Helvetica, sans-serif;
+ font-size:12px;
+  padding-left:2px;
+}
