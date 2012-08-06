@@ -6,6 +6,10 @@ Ext.application({
         'Ext.util.DelayedTask'
     ],
 
+    viewport: {
+        autoMaximize: true
+    },
+
     views: ['Header', 'Footer', 'Login'],
 
     icon: {
