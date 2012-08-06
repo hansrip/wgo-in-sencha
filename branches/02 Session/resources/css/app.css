@@ -7177,7 +7177,7 @@ audio {
 }
 
 /* line 231, ../themes/stylesheets/sencha-touch/default/widgets/_tabs.scss */
-.x-tabbar-dark {
+/*.x-tabbar-dark {
   background-image: none;
   background-color: #0e4b75;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1676b9), color-stop(3%, #11598c), color-stop(100%, #0b3c5e));
@@ -7185,6 +7185,15 @@ audio {
   background-image: linear-gradient(top, #1676b9, #11598c 3%, #0b3c5e);
   border-top-color: #0b3c5e;
   border-bottom-color: #061f31;
+}*/
+
+/*
+overridden by vmoksha #006BB6 007AD0*/
+.x-tabbar-dark {
+    background-image: none;
+    background-color: #3081FB;
+    border-top-color: #3081FB;
+    border-bottom-color: #3081FB;
 }
 /* line 236, ../themes/stylesheets/sencha-touch/default/widgets/_tabs.scss */
 .x-tabbar-dark .x-tab {
@@ -7385,18 +7394,25 @@ audio {
 .x-title .x-innerhtml {
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  /*text-overflow: ellipsis;*/ /*overridden by vmoksha*/
   padding: 0 .3em;
 }
 
 /* line 128, ../themes/stylesheets/sencha-touch/default/widgets/_toolbar.scss */
-.x-toolbar-dark {
-  background-image: none;
-  background-color: #66AB16;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1e93e4), color-stop(3%, #1676b9), color-stop(100%, #11598c));
-  background-image: -webkit-linear-gradient(top, #1e93e4, #1676b9 3%, #11598c);
-  background-image: linear-gradient(top, #1e93e4, #1676b9 3%, #11598c);
+/*.x-toolbar-dark {
+  background-color: #24364c;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5a81af), color-stop(2%, #304864), color-stop(100%, #192533));
+  background-image: -webkit-linear-gradient(#5a81af, #304864 2%, #192533);
+  background-image: linear-gradient(#5a81af, #304864 2%, #192533);
   border-color: black;
+}*/
+/*Overridden by vmoksha*/
+.x-toolbar-dark {
+    background-color: #66AB16;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #66AB16), color-stop(2%, #66AB16), color-stop(100%, #66AB16));
+    background-image: -webkit-linear-gradient(#66AB16, #66AB16 2%, #66AB16);
+    background-image: linear-gradient(#66AB16, #66AB16 2%, #66AB16);
+    border-color: green;
 }
 /* line 132, ../themes/stylesheets/sencha-touch/default/widgets/_toolbar.scss */
 .x-toolbar-dark .x-title {
@@ -7404,12 +7420,19 @@ audio {
   text-shadow: rgba(0, 0, 0, 0.5) 0 -0.08em 0;
 }
 /* line 137, ../themes/stylesheets/sencha-touch/default/widgets/_toolbar.scss */
-.x-toolbar-dark.x-docked-top {
+/*.x-toolbar-dark.x-docked-top {
   border-bottom-color: black;
+}*/
+/*overridden by vmoksha*/
+.x-toolbar-dark.x-docked-top {
+    border-bottom-color: #66AB16;
 }
 /* line 141, ../themes/stylesheets/sencha-touch/default/widgets/_toolbar.scss */
+/*.x-toolbar-dark.x-docked-bottom {
+     border-top-color: black;
+ }*/
 .x-toolbar-dark.x-docked-bottom {
-  border-top-color: black;
+    border-top-color: #66AB16;
 }
 /* line 145, ../themes/stylesheets/sencha-touch/default/widgets/_toolbar.scss */
 .x-toolbar-dark.x-docked-left {
@@ -9701,7 +9724,7 @@ input[type="search"]::-webkit-search-cancel-button {
 div.vm-header-logo {
     border-top-width:10px;
     border-top-style:solid;
-    border-top-color:#008AFF;
+    border-top-color:#3081FB;
     padding-top: 2px;
     padding-bottom: 5px;height: 65px;
     background-color: white;
@@ -9743,7 +9766,7 @@ div.vm-header-logo {
     color: #FFFFFF;
 }
 /*login panel (Start)*/
-.vm-footer-strip{border-bottom-color:#008AFF;border-bottom-width:50px;border-bottom-style:solid;}
+.vm-footer-strip{border-bottom-color:#3081FB;border-bottom-width:50px;border-bottom-style:solid;}
 /*Hack to make Form background to white color i.e. overriding sencha's default greay color*/
 .vm-form .x-scroll-container {background-color: #ffffff;}
 /*Login Form fields*/
@@ -9765,9 +9788,11 @@ div.vm-header-logo {
 
 /*Festival List (Start)*/
 .vm-festival{font-family: Arial;font-size: 12px;width: 85%;}
-.vm-festival-title {white-space: nowrap;text-overflow: ellipsis;overflow: hidden;font-weight: bold;margin: 0px;color: rgb(39,39,39);position: absolute;bottom: 2.5em;left: .5em;}
-.vm-festival-timings {color:#00B050;position: absolute;bottom: 2.5em;right: .5em;}
-.vm-festival-content {white-space: nowrap;text-overflow: ellipsis; overflow: hidden;padding-top: 2px;color: rgb(165,165,165);position: absolute;bottom: 1.2em;left: .5em;}
+.vm-festival-title {white-space: nowrap;text-overflow: ellipsis;overflow: hidden;font-weight: bold;margin: 0px;color: rgb(39,39,39);position: absolute;bottom: 2em;left: .5em;}
+.x-item-selected .vm-festival-title{color: #ffffff;}
+.vm-festival-timings {color:#00B050;position: absolute;bottom: 2em;right: 2.5em;}
+.vm-festival-content {white-space: nowrap;text-overflow: ellipsis; overflow: hidden;padding-top: 2px;color: rgb(165,165,165);position: absolute;bottom: .8em;left: .5em;}
+.x-item-selected .vm-festival-content{color: #CECECE;}
 /*Festival List (End)*/
 
 .btnDashboard.x-button {
