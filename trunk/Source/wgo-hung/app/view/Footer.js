@@ -5,8 +5,8 @@
         items: [
             {
                 xtype: 'panel',
-                html: '<div class="vm-footer-strip"></div>'
-            }
+                //html: '<div class="vm-footer-strip"></div>'//
+                          }
         ]
     }
 });

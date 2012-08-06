@@ -9701,7 +9701,7 @@ input[type="search"]::-webkit-search-cancel-button {
 div.vm-header-logo {
     border-top-width:10px;
     border-top-style:solid;
-    border-top-color:#008AFF;
+    border-top-color:#99CCFF;
     padding-top: 2px;
     padding-bottom: 5px;height: 65px;
     background-color: white;
@@ -9728,7 +9728,7 @@ div.vm-header-logo {
     height:40px;
     margin: 8px 0px 0 0px;
     width: 40px;
-    background: #008AFF;
+    background: #99CCFF;
     text-align: center;
     vertical-align: middle;
     margin-left: 20px;
@@ -9743,7 +9743,7 @@ div.vm-header-logo {
     color: #FFFFFF;
 }
 /*login panel (Start)*/
-.vm-footer-strip{border-bottom-color:#008AFF;border-bottom-width:50px;border-bottom-style:solid;}
+.vm-footer-strip{border-bottom-color: #99CCFF;border-bottom-width:50px;border-bottom-style:solid;}
 /*Hack to make Form background to white color i.e. overriding sencha's default greay color*/
 .vm-form .x-scroll-container {background-color: #ffffff;}
 /*Login Form fields*/

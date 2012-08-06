@@ -2,6 +2,8 @@ Ext.define("wgo-hung.view.Login", {
     extend: 'Ext.form.Panel',
     xtype: 'login',
     id: 'loginForm', //check what id's are for (controllers)
+    fullscreen:'true',
+    autoMaximize:'true',
     requires: [
     'Ext.field.Password'
     ],
@@ -14,7 +16,11 @@ Ext.define("wgo-hung.view.Login", {
             },
             {
                 xtype: 'footer',
-                docked: 'bottom'
+                docked: 'bottom',
+                minHeight: '100px',
+                style: {
+                    background: '#99CCFF'
+                }
             },
             {
                 xtype: 'textfield',
@@ -26,6 +32,7 @@ Ext.define("wgo-hung.view.Login", {
                 placeHolder: 'Username',
                 style: 'align: center',
                 margin: '0 0 10 0' //give bottom of this text field a 10px margin
+                
             },
             {
                 xtype: 'passwordfield',
@@ -33,7 +40,7 @@ Ext.define("wgo-hung.view.Login", {
                 labelWidth:"0%",
                 id: "id-txtPassword",
                 cls: "vm-txt-Password",
-                ClearIcon: false,
+                //ClearIcon: false,
                 placeHolder: 'Password',
                 margin: '0 0 30 0' //gives bottom of this text field a 30px margin
             },
