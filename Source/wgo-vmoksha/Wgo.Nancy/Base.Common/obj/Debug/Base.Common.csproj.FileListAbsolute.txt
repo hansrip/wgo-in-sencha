@@ -18,3 +18,13 @@ D:\WGO\WGO.RestServer\Base.Common\bin\Debug\AsyncCtpLibrary.dll
 D:\WGO\WGO.RestServer\Base.Common\obj\Debug\ResolveAssemblyReference.cache
 D:\WGO\WGO.RestServer\Base.Common\obj\Debug\Base.Common.dll
 D:\WGO\WGO.RestServer\Base.Common\obj\Debug\Base.Common.pdb
+D:\Google Repositories\wgo-in-sencha\trunk\Source\wgo-vmoksha\Wgo.Nancy\Base.Common\bin\Debug\Base.Common.dll
+D:\Google Repositories\wgo-in-sencha\trunk\Source\wgo-vmoksha\Wgo.Nancy\Base.Common\bin\Debug\Base.Common.pdb
+D:\Google Repositories\wgo-in-sencha\trunk\Source\wgo-vmoksha\Wgo.Nancy\Base.Common\bin\Debug\Raven.Client.Lightweight.dll
+D:\Google Repositories\wgo-in-sencha\trunk\Source\wgo-vmoksha\Wgo.Nancy\Base.Common\bin\Debug\Newtonsoft.Json.dll
+D:\Google Repositories\wgo-in-sencha\trunk\Source\wgo-vmoksha\Wgo.Nancy\Base.Common\bin\Debug\Raven.Abstractions.dll
+D:\Google Repositories\wgo-in-sencha\trunk\Source\wgo-vmoksha\Wgo.Nancy\Base.Common\bin\Debug\NLog.dll
+D:\Google Repositories\wgo-in-sencha\trunk\Source\wgo-vmoksha\Wgo.Nancy\Base.Common\bin\Debug\AsyncCtpLibrary.dll
+D:\Google Repositories\wgo-in-sencha\trunk\Source\wgo-vmoksha\Wgo.Nancy\Base.Common\obj\Debug\ResolveAssemblyReference.cache
+D:\Google Repositories\wgo-in-sencha\trunk\Source\wgo-vmoksha\Wgo.Nancy\Base.Common\obj\Debug\Base.Common.dll
+D:\Google Repositories\wgo-in-sencha\trunk\Source\wgo-vmoksha\Wgo.Nancy\Base.Common\obj\Debug\Base.Common.pdb
