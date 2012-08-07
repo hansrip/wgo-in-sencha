@@ -9804,13 +9804,18 @@ div.vm-header-logo {
 .x-item-selected .vm-festival-content{color: #CECECE;}
 /*Festival List (End)*/
 
-.btnDashboard.x-button {
+.vm-btn-dashboard.x-button {
+    background-color: transparent;
+    background-image: none;
+}
+.vm-btn-dashboard-top.x-button {
     background-color: transparent;
     background-image: none;
 }
 
 /*Home/Dashboard*/
-.btnDashboard  {border: none;}
+.vm-btn-dashboard  {border: none; padding-bottom: 50px;}
+.vm-btn-dashboard-top  {border: none; padding-bottom: 50px;padding-top: 50px;}
 
 /*Hack to make Form background to white color i.e. overriding sencha's default greay color*/
 .vm-dashboard .x-body {background-color: rgb(125,196,255);}

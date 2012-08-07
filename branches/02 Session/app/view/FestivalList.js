@@ -14,12 +14,18 @@ Ext.define('Wgo.view.FestivalList', {
             title: 'Festivals',
             xtype: 'list',
             id: 'idFestivalList',
-            itemTpl: '<div class="vm-festival"><div><span class="vm-festival-title">{name}</span><span class="vm-festival-timings">{period}</span><div class="vm-festival-content">{details}</div></div></div>',
+            itemTpl:
+                    '<div class="vm-festival">' +
+                    '<div>' +
+                    '<span class="vm-festival-title">{name}</span>' +
+                    '<span class="vm-festival-timings">{period}</span>' +
+                    '<div class="vm-festival-content">{details}</div>' +
+                    '</div>' +
+                    '</div>',
             store: 'FestivalStore',
             onItemDisclosure: true,
-                plugins: [
+                plugins: [ //Reference code from "http://stackoverflow.com/questions/7321446/sencha-list-paging-plugin"
                     {
-                        //http://stackoverflow.com/questions/7321446/sencha-list-paging-plugin
                         xclass: 'Ext.plugin.ListPaging',
                         autoPaging: true,
                         // These override the text; use CSS for styling

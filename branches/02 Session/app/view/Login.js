@@ -15,7 +15,7 @@ Ext.define("Wgo.view.Login", {
             },
             {
                 xtype: 'textfield',
-                name: 'txtUserName',
+                name: 'txtUserName', // We use this to get the values from the form object i.e. form.getValues().txtUserName
                 labelWidth:"0%", //Hack, if this is not set then the text box is right aligned due to the space allocated for label
                 cls:"vm-txt-username", //this will decorate the text box with "user" icon and also round bord the form control
                 ClearIcon: false,
@@ -43,6 +43,7 @@ Ext.define("Wgo.view.Login", {
         ]
     },
     initialize: function() {
-
+        console.log("Login View Initialize (Start")
+        console.log("Login View Initialize (End")
     }
 });

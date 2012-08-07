@@ -27,7 +27,7 @@ Ext.application({
 
     launch: function() {
         console.log("Application Launch (Start)")
-        //Delay load the Login form by 1sec just to feel the Launch UI
+        //Delay load the Login form by x sec just to feel the Launch UI
         var task = Ext.create('Ext.util.DelayedTask', function() {
             // Destroy the #appLoadingIndicator element
             Ext.fly('appLoadingIndicator').destroy();
@@ -36,10 +36,9 @@ Ext.application({
             /*Todo: Check if authentication ticket already available*/
             Ext.Viewport.add(Ext.create('Wgo.view.Login'));
         });
-        task.delay(1000);
+        task.delay(100);
         console.log("Application Launch (End)")
     },
-
     onUpdated: function() {
         Ext.Msg.confirm(
             "Application Update",
