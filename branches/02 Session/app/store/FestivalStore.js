@@ -6,13 +6,14 @@ Ext.define('Wgo.store.FestivalStore', {
         //totalCount:null,
         autoLoad: true,
         clearOnPageLoad: false,
-        //pageSize: 2,
+        pageSize: 2,
         proxy: {
-            type: 'ajax',
-            pageParam: 'currentPage',
-            limitParam: 'pageSize',
-            url : 'festival.json',
-            reader: 'json'
+            type: 'jsonp',
+            url : 'http://wgo-1.apphb.com/festival/Paginate',
+            reader: {
+                type: 'json',
+                rootProperty:'Data'
+            }
         }
     }
 });

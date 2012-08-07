@@ -7453,6 +7453,7 @@ overridden by vmoksha #006BB6 007AD0*/
   background: #061f31;
 }
 /* line 41, ../themes/stylesheets/sencha-touch/default/_mixins.scss */
+/*Overridden by vmoksha for button color*/
 .x-toolbar-dark .x-button, .x-toolbar-dark .x-button.x-button-back:after, .x-toolbar-dark .x-button.x-button-forward:after, .x-toolbar .x-toolbar-dark .x-button, .x-toolbar .x-toolbar-dark .x-button.x-button-back:after, .x-toolbar .x-toolbar-dark .x-button.x-button-forward:after, .x-toolbar-dark .x-field-select .x-component-outer, .x-toolbar-dark .x-field-select .x-component-outer.x-button-back:after, .x-toolbar-dark .x-field-select .x-component-outer.x-button-forward:after, .x-toolbar .x-toolbar-dark .x-field-select .x-component-outer, .x-toolbar .x-toolbar-dark .x-field-select .x-component-outer.x-button-back:after, .x-toolbar .x-toolbar-dark .x-field-select .x-component-outer.x-button-forward:after, .x-toolbar-dark .x-field-select .x-component-outer:before, .x-toolbar-dark .x-field-select .x-component-outer:before.x-button-back:after, .x-toolbar-dark .x-field-select .x-component-outer:before.x-button-forward:after, .x-toolbar .x-toolbar-dark .x-field-select .x-component-outer:before, .x-toolbar .x-toolbar-dark .x-field-select .x-component-outer:before.x-button-back:after, .x-toolbar .x-toolbar-dark .x-field-select .x-component-outer:before.x-button-forward:after {
   background-image: none;
   background-color: #11598c;
@@ -7460,6 +7461,14 @@ overridden by vmoksha #006BB6 007AD0*/
   background-image: -webkit-linear-gradient(top, #1985d0, #1468a2 3%, #0e4b75);
   background-image: linear-gradient(top, #1985d0, #1468a2 3%, #0e4b75);
 }
+/*.x-toolbar-dark .x-button, .x-toolbar-dark .x-button.x-button-back:after, .x-toolbar-dark .x-button.x-button-forward:after, .x-toolbar .x-toolbar-dark .x-button, .x-toolbar .x-toolbar-dark .x-button.x-button-back:after, .x-toolbar .x-toolbar-dark .x-button.x-button-forward:after, .x-toolbar-dark .x-field-select .x-component-outer, .x-toolbar-dark .x-field-select .x-component-outer.x-button-back:after, .x-toolbar-dark .x-field-select .x-component-outer.x-button-forward:after, .x-toolbar .x-toolbar-dark .x-field-select .x-component-outer, .x-toolbar .x-toolbar-dark .x-field-select .x-component-outer.x-button-back:after, .x-toolbar .x-toolbar-dark .x-field-select .x-component-outer.x-button-forward:after, .x-toolbar-dark .x-field-select .x-component-outer:before, .x-toolbar-dark .x-field-select .x-component-outer:before.x-button-back:after, .x-toolbar-dark .x-field-select .x-component-outer:before.x-button-forward:after, .x-toolbar .x-toolbar-dark .x-field-select .x-component-outer:before, .x-toolbar .x-toolbar-dark .x-field-select .x-component-outer:before.x-button-back:after, .x-toolbar .x-toolbar-dark .x-field-select .x-component-outer:before.x-button-forward:after {
+    background-image: none;
+    background-color: #3a8a17;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3a8a17), color-stop(3%, #3a8a17), color-stop(100%, #3a8a17));
+    background-image: -webkit-linear-gradient(top, #3a8a17, #3a8a17 3%, #3a8a17);
+    background-image: linear-gradient(top, #1985d0, #1468a2 3%, #0e4b75);
+}*/
+/*3a8a17*/
 /* line 45, ../themes/stylesheets/sencha-touch/default/_mixins.scss */
 .x-toolbar-dark .x-button .x-button-icon.x-icon-mask, .x-toolbar .x-toolbar-dark .x-button .x-button-icon.x-icon-mask, .x-toolbar-dark .x-field-select .x-component-outer .x-button-icon.x-icon-mask, .x-toolbar .x-toolbar-dark .x-field-select .x-component-outer .x-button-icon.x-icon-mask, .x-toolbar-dark .x-field-select .x-component-outer:before .x-button-icon.x-icon-mask, .x-toolbar .x-toolbar-dark .x-field-select .x-component-outer:before .x-button-icon.x-icon-mask {
   background-image: none;
@@ -9800,17 +9809,16 @@ div.vm-header-logo {
     background-image: none;
 }
 
-.btnDashboard.x-button, .x-toolbar .x-button {
-    border: none;
-}
+/*Home/Dashboard*/
+.btnDashboard  {border: none;}
 
 /*Hack to make Form background to white color i.e. overriding sencha's default greay color*/
 .vm-dashboard .x-body {background-color: rgb(125,196,255);}
-.vm-dashboard-notes{font-family: Arial;font-size: 12px;
-    text-align: center;}
+.vm-dashboard-notes{font-family: Arial;font-size: 12px;text-align: center;}
 /*Login Form fields*/
-
-
-
-
+/*Table less approach to display key-value details*/
+.vm-profile{font-family: Arial;font-size:12px;}
+.vm-profile-key{display:block;font-weight:bold;text-align:right;width:75px;float:left;}
+.vm-profile-value{float:left;font-size:12px;width:200px;margin:0px 0 0px 10px;color: rgb(165,165,165);}
+.vm-profile-details{float:left;font-size:12px;width:100%;margin:0px 0 0px 10px;color: rgb(165,165,165);}
 
