@@ -5,7 +5,7 @@ Ext.application({
     ],
     models: ['Festival'],
     views:  ['Header','Footer','Login','Home', 'Main','FestivalList'],
-    controllers: ['Main'],
+    controllers: ['Main','Festival'],
     stores: ['FestivalStore'],
     icon: {
         '57': 'resources/icons/Icon.png',
