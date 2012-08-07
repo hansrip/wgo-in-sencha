@@ -9762,3 +9762,14 @@ div.vm-header-logo {
     height: 44px;
 }
 /*login panel (End)*/
+
+/*home panel (Start)*/
+.btnDashboard.x-button {
+      background-color: transparent;
+      background-image: none;
+}
+ 
+.btnDashboard.x-button, .x-toolbar .x-button {
+      border: none;
+}
+/*home panel (End)*/

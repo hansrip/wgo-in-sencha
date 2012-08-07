@@ -2,8 +2,8 @@ Ext.define("wgo-hung.view.Login", {
     extend: 'Ext.form.Panel',
     xtype: 'login',
     id: 'loginForm', //check what id's are for (controllers)
-    fullscreen:'true',
-    autoMaximize:'true',
+    fullscreen:'true', //to fullscreen the app on mobile
+    autoMaximize:'true',//need to figure out if fullscreen or autoMaximize is the preferred
     requires: [
     'Ext.field.Password'
     ],
@@ -17,7 +17,7 @@ Ext.define("wgo-hung.view.Login", {
             {
                 xtype: 'footer',
                 docked: 'bottom',
-                minHeight: '100px',
+                minHeight: '50px',
                 style: {
                     background: '#99CCFF'
                 }
@@ -26,7 +26,7 @@ Ext.define("wgo-hung.view.Login", {
                 xtype: 'textfield',
                 name: 'txtUserName',
                 labelWidth:"0%", // if not set then text box is right aligned due to space allocated for label
-                id: "id-txtUserName",
+                //id: "id-txtUserName", commenting out because I don't think we need this
                 cls: "vm-txt-username", //decorates text box with "user" icon and border radius
                 ClearIcon: false, //what does this mean?
                 placeHolder: 'Username',
@@ -38,7 +38,7 @@ Ext.define("wgo-hung.view.Login", {
                 xtype: 'passwordfield',
                 name: 'txtPassword',
                 labelWidth:"0%",
-                id: "id-txtPassword",
+                //id: "id-txtPassword", commenting out because I don't think we need this
                 cls: "vm-txt-Password",
                 //ClearIcon: false,
                 placeHolder: 'Password',

@@ -1,4 +1,12 @@
 Ext.application({
+    models: ["Issue", "Festival"],
+
+    views: ['Header', 'Footer', 'Login', 'FestivalList', 'FestivalDetail', 'IssuesList', 'IssuesDetail', 'Home', 'Main'],
+
+    controllers: ["Issues", "Main"],
+
+    stores:['FestivalStore', 'IssueStore'],
+
     name: 'wgo-hung',
 
     requires: [
@@ -9,8 +17,6 @@ Ext.application({
     viewport: {
         autoMaximize: true
     },
-
-    views: ['Header', 'Footer', 'Login'],
 
     icon: {
         '57': 'resources/icons/Icon.png',
