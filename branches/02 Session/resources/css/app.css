@@ -9797,7 +9797,7 @@ div.vm-header-logo {
 
 /*Festival List (Start)*/
 .vm-festival{font-family: Arial;font-size: 12px;width: 85%;}
-.vm-festival-title {white-space: nowrap;text-overflow: ellipsis;overflow: hidden;font-weight: bold;margin: 0px;color: rgb(39,39,39);position: absolute;bottom: 2em;left: .5em;}
+.vm-festival-title {white-space: nowrap;text-overflow: ellipsis;overflow: hidden;font-weight: bold;margin: 0px;color: #F01D4F}
 .x-item-selected .vm-festival-title{color: #ffffff;}
 .vm-festival-timings {color:#00B050;position: absolute;bottom: 2em;right: 2.5em;}
 .vm-festival-content {white-space: nowrap;text-overflow: ellipsis; overflow: hidden;padding-top: 2px;color: rgb(165,165,165);position: absolute;bottom: .8em;left: .5em;}
@@ -9823,7 +9823,7 @@ div.vm-header-logo {
 /*Login Form fields*/
 /*Table less approach to display key-value details*/
 .vm-profile{font-family: Arial;font-size:12px;}
-.vm-profile-key{display:block;font-weight:bold;text-align:right;width:75px;float:left;}
-.vm-profile-value{float:left;font-size:12px;width:200px;margin:0px 0 0px 10px;color: rgb(165,165,165);}
-.vm-profile-details{float:left;font-size:12px;width:100%;margin:0px 0 0px 10px;color: rgb(165,165,165);}
+.vm-profile-key{display:block;font-weight:bold;text-align:right;float:left;}
+.vm-profile-value{float:left;font-size:12px;margin:0px 0 0px 10px;color: rgb(165,165,165);}
+.vm-profile-details{font-size:12px;color: rgb(165,165,165);}
 

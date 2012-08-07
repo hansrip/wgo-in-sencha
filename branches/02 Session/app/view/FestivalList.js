@@ -18,8 +18,8 @@ Ext.define('Wgo.view.FestivalList', {
                     '<div class="vm-festival">' +
                     '<div>' +
                     '<span class="vm-festival-title">{name}</span>' +
-                    '<span class="vm-festival-timings">{period}</span>' +
-                    '<div class="vm-festival-content">{details}</div>' +
+                    //'<span class="vm-festival-timings">{period}</span>' +
+                    //'<div class="vm-festival-content">{details}</div>' +
                     '</div>' +
                     '</div>',
             store: 'FestivalStore',

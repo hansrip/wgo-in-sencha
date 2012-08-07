@@ -4,8 +4,8 @@ Ext.define('Wgo.view.FestivalDetail', {
     config: {
         title: 'Festivals',
         tpl: [
-                '<div id="post">'
-               + ' <table class="vm-profile">'
+                '<div>'
+               + ' <table>'
                 + ' <tr><td style="font-weight: bold;padding-bottom: 5px;">{name}</td></tr>'
                 + '        <tr>'
                 + '            <td>'
@@ -37,8 +37,8 @@ Ext.define('Wgo.view.FestivalDetail', {
                 + '     </td>'
                 + ' </tr>'
                 + ' <tr>'
-                + '        <td colspan="2">'
-                + '         <label class="vm-profile vm-profile-value">{details}</label>'
+                + '        <td colspan="2" class="vm-profile-details">'
+                + '         {details}'
                 + '     </td>'
                 + ' </tr>'
                 + '</table>'
