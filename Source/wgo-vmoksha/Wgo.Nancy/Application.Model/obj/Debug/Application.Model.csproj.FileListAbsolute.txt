@@ -1,0 +1,10 @@
+D:\Nancy\Nancy_19July\Application.Model\bin\Debug\Application.Model.dll
+D:\Nancy\Nancy_19July\Application.Model\bin\Debug\Application.Model.pdb
+D:\Nancy\Nancy_19July\Application.Model\obj\Debug\ResolveAssemblyReference.cache
+D:\Nancy\Nancy_19July\Application.Model\obj\Debug\Application.Model.dll
+D:\Nancy\Nancy_19July\Application.Model\obj\Debug\Application.Model.pdb
+D:\WGO\WGO.RestServer\Application.Model\bin\Debug\Application.Model.dll
+D:\WGO\WGO.RestServer\Application.Model\bin\Debug\Application.Model.pdb
+D:\WGO\WGO.RestServer\Application.Model\obj\Debug\ResolveAssemblyReference.cache
+D:\WGO\WGO.RestServer\Application.Model\obj\Debug\Application.Model.dll
+D:\WGO\WGO.RestServer\Application.Model\obj\Debug\Application.Model.pdb

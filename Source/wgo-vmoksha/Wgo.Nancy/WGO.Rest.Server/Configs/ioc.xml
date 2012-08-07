@@ -1,0 +1,4 @@
+﻿<?xml version="1.0"?>
+<objects xmlns="http://www.springframework.net"> 
+  <object id="EmployeeRepository" type="Nancy.Rest.Server.RavenDB.EmployeeRepository, Nancy.Rest.Server" singleton="false" />
+</objects>
