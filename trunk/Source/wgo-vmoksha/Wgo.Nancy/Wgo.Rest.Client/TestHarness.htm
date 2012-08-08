@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Nancy Client</title>
+    <script type="text/javascript" src="Assets/Scripts/jquery.js"></script>
+    <script type="text/javascript" src="Assets/Scripts/jquery.ui.core.js"></script> 
+   
+
+    
+</head>
+<body>
+<div id="divContent"></div>
+</body>
+</html>
+<script type="text/javascript">
+    //-------------------------------------------------------------------------------------------------
+    //
+    //-------------------------------------------------------------------------------------------------
+    $(document).ready(function () {
+        debugger;
+        //setTimeout("LoadLogin()", 0);
+        setTimeout("InsertNavigation()", 0);
+    });
+
+    function LoadLogin() {
+        $("#divContent").InitializeTemplate('Assets/Templates/Login.htm');
+    }
+    //-------------------------------------------------------------------------------------------------
+    //
+    //-------------------------------------------------------------------------------------------------
+    function InsertNavigation() {       
+        var request = {};
+        // request.Id = planId;
+        request.name ="fest1";
+        request.details = "fest2";
+        request.city = "fest3";
+        request.period = "fest4";
+        request.timings = "fest5";
+        request.telePhone = "fest6";
+        try {
+            $.ajax({
+                type: 'POST',
+                url: "http://localhost:1500/Festival/",
+                data: request,
+                dataType: "jsonp",
+                success: OnNavigationInsertSuccess,
+                error: OnNavigationInsertError
+            });
+        } catch (e) { debugger; }
+    }
+    //-------------------------------------------------------------------------------------------------
+    //
+    //-------------------------------------------------------------------------------------------------
+    function OnNavigationInsertSuccess(res) {
+        alert("Successfully Inserted");
+    }
+    //-------------------------------------------------------------------------------------------------
+    //
+    //-------------------------------------------------------------------------------------------------       
+    function OnNavigationInsertError(res, ajaxOptions, thrownError) {
+        //debugger;
+        alert(thrownError);
+    }
+    //callback function for jsonp
+    function callback(res) {
+
+    }
+
+    //----------------------------------------------------------------------------------------------------
+    //Examples*/
+    //1) GET Operation- This will list the collection of Navigations*******************************************
+    /*try {
+    $.ajax({
+    type: 'GET',
+    url: "http://localhost:57861/Infra/Navigation/",
+    data: request,
+    dataType: "jsonp",
+    jsonpCallback: 'callback',
+    success: OnNavigationInsertSuccess,
+    error: OnNavigationInsertError
+    });
+    } catch (e) { debugger; }
+    //2) Post Operation- This insert the data we passed********************************************************
+    try {
+    $.ajax({
+    type: 'GET',
+    url: "http://localhost:57861/Infra/Navigation/",
+    data: request,
+    dataType: "jsonp",
+    jsonpCallback: 'callback',
+    success: OnNavigationInsertSuccess,
+    error: OnNavigationInsertError
+    });
+    } catch (e) { debugger; }
+    //3) GET Operation- This will get a menu whose name starts with "CAB"***************************************
+    //Note: Data can be passed on need basis
+    try {
+    $.ajax({
+    type: 'GET',
+    url: "http://localhost:57861/infra/Navigation/CAB",
+    //data: request,      
+    dataType: "jsonp",
+    jsonpCallback: 'callback',
+    success: OnNavigationInsertSuccess,
+    error: OnNavigationInsertError
+    });
+    } catch (e) { debugger; }
+    */
+    //----------------------------------------------------------------------------------------------------
+</script>
