@@ -11,8 +11,10 @@ Ext.define('Wgo.view.Main', {
     config: {
         tabBar: {
             docked: 'bottom',
+            //hidden:true,
             layout: {pack: 'center'}},
         items: [
+            { xtype: 'home' },
             { xtype: 'festivallist' }
         ]
     }
