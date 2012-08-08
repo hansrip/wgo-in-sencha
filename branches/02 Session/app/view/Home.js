@@ -3,6 +3,9 @@ Ext.define('Wgo.view.Home', {
     xtype: 'home',
     config: {
         cls:"vm-dashboard",  //this class will override sencha's form background color to white",
+        layout:'card',
+        iconCls:'home',
+        title:'Home',
         items: [
             {
                 xtype: 'panel',

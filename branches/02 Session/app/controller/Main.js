@@ -2,7 +2,7 @@ Ext.define('Wgo.controller.Main', {
     extend: 'Ext.app.Controller',
     config: {
         refs: {
-            loginForm:'#loginForm' // <anyKey> : <object/dom identifier> this will freely create a function called get<AnyKey>()
+            loginForm:'login' // <anyKey> : <object/dom identifier> this will freely create a function called get<AnyKey>()
                                    // We can also use xtype i.e. loginForm:'login'
             },
         control: {
@@ -27,7 +27,7 @@ Ext.define('Wgo.controller.Main', {
         //get username and password from form elements
         var user = form.getValues().txtUserName;
         var pwd = form.getValues().txtPassword;
-
+        debugger;
         //debugger;
         console.log("Before Form Submit")
         Ext.util.JSONP.request({
