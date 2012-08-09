@@ -3,8 +3,8 @@ Ext.define('Wgo.controller.Main', {
     config: {
         refs: {
             loginForm:'login' // <anyKey> : <object/dom identifier> this will freely create a function called get<AnyKey>()
-                                   // We can also use xtype i.e. loginForm:'login'
-            },
+            // We can also use xtype i.e. loginForm:'login'
+        },
         control: {
             //Attach event handlers for controls matched by component queries. In this case button whose action="btnLoginSubmit" is queried
             // and for the query result, event handler function "submitLoginForm" is attached
@@ -20,7 +20,7 @@ Ext.define('Wgo.controller.Main', {
     //------------------------------------------------------------------------------------------------------------------
     //Event Handler for login button tap action
     submitLoginForm:function(){
-        //console.log("login button tap event (Start)");
+        console.log("login button tap event (Start)");
         // Mask the viewport
         Ext.Viewport.mask();
         var form = this.getLoginForm(); //We got this for free through refs above
@@ -42,13 +42,13 @@ Ext.define('Wgo.controller.Main', {
                 if (result.Success) {
                     Ext.Viewport.setActiveItem({xtype:'home'},{type: 'slide', direction: 'right'});
                 }else{
-                    Ext.Msg.alert("Login attempt failed");
+                    Ext.Msg.alert("Un authorized access");
                 }
             },
             failure: function(result, request) {
                 // Unmask the viewport
                 Ext.Viewport.unmask();
-                Ext.Msg.alert("Login attempt failed");            }
+                Ext.Msg.alert("Network Failure or Time out happened");            }
         });
         //console.log("login button tap event (End)");
     },

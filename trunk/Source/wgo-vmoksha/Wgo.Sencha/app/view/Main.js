@@ -14,7 +14,7 @@ Ext.define('Wgo.view.Main', {
             //hidden:true,
             layout: {pack: 'center'}},
         items: [
-            { xtype: 'home' },
+            //{ xtype: 'home' },
             { xtype: 'festivallist' }
         ]
     }
