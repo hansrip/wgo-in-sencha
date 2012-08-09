@@ -6,15 +6,19 @@
 * */
 Ext.define('Wgo.view.Main', {
     extend: 'Ext.TabPanel',
-    xtype: 'main'
+    xtype: 'main',
+    id: 'idMain'
     ,
     config: {
         tabBar: {
-            docked: 'bottom',
-            //hidden:true,
-            layout: {pack: 'center'}},
+        docked: 'bottom',
+        layout: {
+            type: 'hbox',
+            align: 'middle'
+        }},
         items: [
-            //{ xtype: 'home' },
+            { xtype: 'home' },
+            { xtype: 'issuelist' },
             { xtype: 'festivallist' }
         ]
     }

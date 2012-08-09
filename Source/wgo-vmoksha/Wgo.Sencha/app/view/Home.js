@@ -3,9 +3,10 @@ Ext.define('Wgo.view.Home', {
     xtype: 'home',
     config: {
         cls:"vm-dashboard",  //this class will override sencha's form background color to white",
-        //layout:'card',
-        //iconCls:'home',
-        //title:'Home',
+        layout:'vbox',
+        scrollable:true,
+        iconCls:'home',
+        title:'Home',
         items: [
             {
                 xtype: 'panel',
@@ -99,6 +100,13 @@ Ext.define('Wgo.view.Home', {
                 xtype: 'footer',
                 docked: 'bottom'
             }
-        ]
+        ],
+
+        listeners: {
+            painted: function() {
+                console.log('painted');
+                Ext.getCmp('idMain').getTabBar().hide();
+            }
+        }
     }
 });

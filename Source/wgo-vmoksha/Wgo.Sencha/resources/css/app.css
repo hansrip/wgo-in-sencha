@@ -9827,3 +9827,21 @@ div.vm-header-logo {
 .vm-profile-value{float:left;font-size:12px;margin:0px 0 0px 10px;color: rgb(165,165,165);}
 .vm-profile-details{font-size:12px;color: rgb(165,165,165);}
 
+/*Issues List (Start)*/
+.vm-wgo-monthly-issues {
+    min-height: 40px;
+}
+.vm-wgo-monthly-issues img {
+    border-radius: 5px;
+    float: left;
+}
+.vm-wgo-monthly-issues .issue {
+    white-space: nowrap;
+    text-overflow: ellipsis;overflow: hidden;font-size: 16px;margin: 0px;color: #F01D4F;padding-top: 15px;
+    padding-left: 20px;
+}
+.x-item-selected .vm-wgo-monthly-issues .issue {
+    color: #ffffff;
+}
+/*Issues List (End)*/
+

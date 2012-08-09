@@ -27,8 +27,6 @@ Ext.define('Wgo.controller.Main', {
         //get username and password from form elements
         var user = form.getValues().txtUserName;
         var pwd = form.getValues().txtPassword;
-        debugger;
-        //debugger;
         console.log("Before Form Submit")
         Ext.util.JSONP.request({
             url: 'http://wgo-1.apphb.com/authenticate',
@@ -40,7 +38,7 @@ Ext.define('Wgo.controller.Main', {
             success: function(result, request) {
                 Ext.Viewport.unmask();
                 if (result.Success) {
-                    Ext.Viewport.setActiveItem({xtype:'home'},{type: 'slide', direction: 'right'});
+                    Ext.Viewport.setActiveItem({xtype:'main'},{type: 'slide', direction: 'right'});
                 }else{
                     Ext.Msg.alert("Un authorized access");
                 }
@@ -56,7 +54,7 @@ Ext.define('Wgo.controller.Main', {
     //Event Handler Home dashboard button
     btnDashboardClick:function(){
         console.log("btnDashboardClick (Start)")
-        Ext.Viewport.setActiveItem({xtype:'main'},{type: 'slide', direction: 'right'});
+        Ext.getCmp('idMain').setActiveItem(1,{type: 'slide', direction: 'right'}).getTabBar().show();
         console.log("btnDashboardClick (End)")
     }
 });

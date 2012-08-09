@@ -21,7 +21,7 @@ Ext.define('Wgo.controller.Festival', {
         console.log("Festival controller showDetail(Start)")
         var fdv = Ext.create("Wgo.view.FestivalDetail");
         fdv.setRecord(record)
-        debugger;
+
         this.getFestivallist().push(fdv)
         console.log("Festival controller showDetail(End)")
     }
