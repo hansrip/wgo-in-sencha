@@ -13,3 +13,8 @@ D:\Google Repositories\wgo-in-sencha\trunk\Source\wgo-vmoksha\Wgo.Nancy\Applicat
 D:\Google Repositories\wgo-in-sencha\trunk\Source\wgo-vmoksha\Wgo.Nancy\Application.Model\obj\Debug\ResolveAssemblyReference.cache
 D:\Google Repositories\wgo-in-sencha\trunk\Source\wgo-vmoksha\Wgo.Nancy\Application.Model\obj\Debug\Application.Model.dll
 D:\Google Repositories\wgo-in-sencha\trunk\Source\wgo-vmoksha\Wgo.Nancy\Application.Model\obj\Debug\Application.Model.pdb
+D:\WGO\Wgo.Nancy9Aug\Application.Model\bin\Debug\Application.Model.dll
+D:\WGO\Wgo.Nancy9Aug\Application.Model\bin\Debug\Application.Model.pdb
+D:\WGO\Wgo.Nancy9Aug\Application.Model\obj\Debug\ResolveAssemblyReference.cache
+D:\WGO\Wgo.Nancy9Aug\Application.Model\obj\Debug\Application.Model.dll
+D:\WGO\Wgo.Nancy9Aug\Application.Model\obj\Debug\Application.Model.pdb
