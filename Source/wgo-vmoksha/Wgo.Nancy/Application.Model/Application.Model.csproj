@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Issue.cs" />
     <Compile Include="Core\Festival.cs" />
     <Compile Include="Core\EntityBase.cs" />
     <Compile Include="Core\IEntityBase.cs" />

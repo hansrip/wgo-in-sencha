@@ -157,10 +157,13 @@
     <Compile Include="Factory\IRepositoryFactory.cs" />
     <Compile Include="Ioc\Exposer.cs" />
     <Compile Include="Module\AuthenticationModule.cs" />
+    <Compile Include="Module\IssueModule.cs" />
     <Compile Include="Module\FestivalModule.cs" />
     <Compile Include="Module\ModuleBase.cs" />
     <Compile Include="Module\UserModule.cs" />
     <Compile Include="RavenDB\AbstractRavenRepository.cs" />
+    <Compile Include="RavenDB\IIssueRepository.cs" />
+    <Compile Include="RavenDB\IssueRepository.cs" />
     <Compile Include="RavenDB\IFestivalRepository.cs" />
     <Compile Include="RavenDB\FestivalRepository.cs" />
     <Compile Include="RavenDB\IRavenSessionManager.cs" />
@@ -195,7 +198,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1500</DevelopmentServerPort>
+          <DevelopmentServerPort>4404</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:57861/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
