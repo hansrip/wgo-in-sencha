@@ -8,10 +8,10 @@ Ext.define('Wgo.view.FestivalList', {
     config: {
         fullscreen: true,
         iconCls: 'favorites',
-        title: 'Festivals',
+        title: 'Festivals', //Icon subtext
         items: [
             {
-            title: 'Festivals',
+            title: 'Festivals', //Title appear in Title bar
             xtype: 'list',
             id: 'idFestivalList', // we are using this inside the controller @ control
             itemTpl:

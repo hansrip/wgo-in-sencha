@@ -7,11 +7,11 @@ Ext.define('Wgo.store.FestivalStore', {
         pageSize: 2,
         proxy: {
             type: 'jsonp', //for cross domain calls
-            //url : 'http://wgo-1.apphb.com/festival/Paginate',
-            url:'http://vm-wgo-rails.herokuapp.com/festivals.json',
+            url : 'http://wgo-1.apphb.com/festival/Paginate',
+            //url:'http://vm-wgo-rails.herokuapp.com/festivals.json',
             reader: {
-                type: 'json'//,
-                //rootProperty:'Data' //The result json is (may be) complex and nested objects hence we specify the root property to look for
+                type: 'json'
+                ,rootProperty:'Data' //The result json is (may be) complex and nested objects hence we specify the root property to look for
             }
         }
     }

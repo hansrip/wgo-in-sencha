@@ -3,9 +3,9 @@ Ext.define('Wgo.view.Home', {
     xtype: 'home',
     config: {
         cls:"vm-dashboard",  //this class will override sencha's form background color to white",
-        layout:'card',
-        iconCls:'home',
-        title:'Home',
+        //layout:'card',
+        //iconCls:'home',
+        //title:'Home',
         items: [
             {
                 xtype: 'panel',
@@ -13,14 +13,14 @@ Ext.define('Wgo.view.Home', {
                 items: [
                     {
                         xtype: 'button',
-                        html: '<div class="image"><img alt="CAB" src="resources/images/issues.png" align="center"></div><div class="vm-dashboard-notes">Home</div>',
+                        html: '<div class="image"><img alt="CAB" src="resources/images/issues.png" align="center" height="48px" width="48px"></div><div class="vm-dashboard-notes">Home</div>',
                         width:'33%',
                         action: 'btnDashboardClick',
                         ui:'round',
                         cls: 'vm-btn-dashboard-top'
                     }, {
                         xtype: 'button',
-                        html: '<div class="image"><img alt="CAB" src="resources/images/nav-articles.png" align="center"></div><div class="vm-dashboard-notes">Articles</div>',
+                        html: '<div class="image"><img alt="CAB" src="resources/images/icon-text.png" align="center" height="48px" width="48px"></div><div class="vm-dashboard-notes">Haiku</div>',
                         width:'33%',
                         action: 'btnDashboardClick',
                         ui:'round',
@@ -28,7 +28,7 @@ Ext.define('Wgo.view.Home', {
                     },
                     {
                         xtype: 'button',
-                        html: '<div class="image"><img alt="CAB" src="resources/images/nav-settings.png" align="center"></div><div class="vm-dashboard-notes">Settings</div>',
+                        html: '<div class="image"><img alt="CAB" src="resources/images/icon-calendar.png" align="center" height="48px" width="48px"></div><div class="vm-dashboard-notes">Issues</div>',
                         width:'33%',
                         action: 'btnDashboardClick',
                         ui:'round',
@@ -41,14 +41,14 @@ Ext.define('Wgo.view.Home', {
                 items: [
                     {
                         xtype: 'button',
-                        html: '<div class="image"><img alt="CAB" src="resources/images/nav-stats.png" align="center"></div><div class="vm-dashboard-notes">Stats</div>',
+                        html: '<div class="image"><img alt="CAB" src="resources/images/Movie File.png" align="center" height="48px" width="48px"></div><div class="vm-dashboard-notes">Movies</div>',
                         width:'33%',
                         action: 'btnDashboardClick',
                         ui:'round',
                         cls: 'vm-btn-dashboard'
                     }, {
                         xtype: 'button',
-                        html: '<div class="image"><img alt="CAB" src="resources/images/nav-custom.png" align="center"></div><div class="vm-dashboard-notes">Announcements</div>',
+                        html: '<div class="image"><img alt="CAB" src="resources/images/news_512.png" align="center" height="48px" width="48px"></div><div class="vm-dashboard-notes">Announcements</div>',
                         width:'33%',
                         action: 'btnDashboardClick',
                         ui:'round',
@@ -56,7 +56,7 @@ Ext.define('Wgo.view.Home', {
                     },
                     {
                         xtype: 'button',
-                        html: '<div class="image"><img alt="CAB" src="resources/images/nav-users.png" align="center"></div><div class="vm-dashboard-notes">Users</div>',
+                        html: '<div class="image"><img alt="CAB" src="resources/images/icon-band.png" align="center" height="48px" width="48px"></div><div class="vm-dashboard-notes">Performances</div>',
                         width:'33%',
                         action: 'btnDashboardClick',
                         ui:'round',
@@ -69,14 +69,14 @@ Ext.define('Wgo.view.Home', {
                 items: [
                     {
                         xtype: 'button',
-                        html: '<div class="image"><img alt="CAB" src="resources/images/nav-twitter.png" align="center"></div><div class="vm-dashboard-notes">Twitter</div>',
+                        html: '<div class="image"><img alt="CAB" src="resources/images/Settings.png" align="center" height="48px" width="48px"></div><div class="vm-dashboard-notes">Settings</div>',
                         width:'33%',
                         action: 'btnDashboardClick',
                         ui:'round',
                         cls: 'vm-btn-dashboard'
                     }, {
                         xtype: 'button',
-                        html: '<div class="image"><img alt="CAB" src="resources/images/nav-comments.png" align="center"></div><div class="vm-dashboard-notes">Comments</div>',
+                        html: '<div class="image"><img alt="CAB" src="resources/images/Hot_Dog_Car.png" align="center" height="48px" width="48px"></div><div class="vm-dashboard-notes">Festivals</div>',
                         width:'33%',
                         action: 'btnDashboardClick',
                         ui:'round',
@@ -84,7 +84,7 @@ Ext.define('Wgo.view.Home', {
                     },
                     {
                         xtype: 'button',
-                        html: '<div class="image"><img alt="CAB" src="resources/images/nav-gallery.png" align="center"></div><div class="vm-dashboard-notes">Gallery</div>',
+                        html: '<div class="image"><img alt="CAB" src="resources/images/Logout.png" align="center" height="48px" width="48px"></div><div class="vm-dashboard-notes">Logout</div>',
                         width:'33%',
                         action: 'btnDashboardClick',
                         ui:'round',
