@@ -37,6 +37,17 @@ Ext.define('Wgo.view.FestivalList', {
             {
                 xtype: 'header',
                 docked: 'top'
-            }]
+            }],
+        listeners: {
+            activate: function() {
+                //console.log('FestivalList Active Item Id = ' + this.getActiveItem().getId());
+                //debugger;
+                console.log(' Active Item Check = ' + Number(this.getActiveItem().getActiveItem()).toString() == Number.NaN);
+                if(Number(this.getActiveItem().getActiveItem()).toString() == '0')
+                {
+                    this.pop();
+                }
+            }
+        }
     }
 });

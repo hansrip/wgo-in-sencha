@@ -3,10 +3,10 @@ Ext.application({
     requires: [
         'Ext.MessageBox'
     ],
-    models: ['Festival'],
-    views:  ['Header','Footer','Login','Home', 'Main','FestivalList'],
+    models: ['Festival','Issue'],
+    views:  ['Header','Footer','Login','Home', 'Main','FestivalList','IssueList'],
     controllers: ['Main','Festival'],
-    stores: ['FestivalStore'],
+    stores: ['FestivalStore','IssueStore'],
     icon: {
         '57': 'resources/icons/Icon.png',
         '72': 'resources/icons/Icon~ipad.png',
