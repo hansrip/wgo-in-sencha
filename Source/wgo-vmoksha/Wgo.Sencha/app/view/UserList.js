@@ -5,28 +5,14 @@ Ext.define('Wgo.view.UserList', {
         'Wgo.store.IssueStore',
         'Ext.dataview.List'    ],
     config: {
+        cls:'clsUsers',
         fullscreen: true,
         iconCls: 'Users',
         title: 'Users', //Icon subtext
         items: [
             {
                 title: 'Users', //Title appear in Title bar
-                xtype: 'list',
-                toolbar:{
-                  items: [
-                            {xtype: 'spacer'},
-                            {
-                                iconMask:true,
-                                iconCls: 'add',
-                                ui: 'plain',
-                                align: 'right',
-                                id:'idCABBack',                                
-                                handler: function() {
-                                    console.log('Back Clicked');
-                                }
-                            },
-                            ]
-                },
+                xtype: 'list', 
                 id: 'idUserList', // we are using this inside the controller @ control
                 itemTpl: Ext.create('Ext.XTemplate',
                     '<div class="vm-wgo-monthly-issues">',
@@ -46,6 +32,35 @@ Ext.define('Wgo.view.UserList', {
                     }
                 ]
             },
+            {
+                    xtype:"toolbar",
+                    ui:"dark",
+                    docked:"top",
+                    items: [
+                            {xtype: 'spacer'},
+                            {   xtype: 'title' ,
+                                title:"Users", 
+                            },
+                            {xtype: 'spacer'},
+                            {
+                                iconMask:true,
+                                iconCls: 'add',
+                                ui: 'plain',
+                                align: 'right',
+                                action:'btnAddUser',
+                                id:'idBtnAdd',                                
+                            },
+                            {
+                                iconMask:true,
+                                iconCls: 'reply',
+                                ui: 'plain',
+                                hidden:true,
+                                align: 'right',
+                                action:'btnBack',
+                                id:'idBtnBack',                                
+                            },
+                            ]
+                },
             {
                 xtype: 'header',
                 docked: 'top'
