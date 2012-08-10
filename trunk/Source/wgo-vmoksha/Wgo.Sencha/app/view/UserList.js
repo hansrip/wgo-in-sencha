@@ -33,6 +33,10 @@ Ext.define('Wgo.view.UserList', {
                 ]
             },
             {
+                xtype: 'header',
+                docked: 'top'
+            },
+            {
                     xtype:"toolbar",
                     ui:"dark",
                     docked:"top",
@@ -60,11 +64,8 @@ Ext.define('Wgo.view.UserList', {
                                 id:'idBtnBack',                                
                             },
                             ]
-                },
-            {
-                xtype: 'header',
-                docked: 'top'
-            }]
+                }
+            ]
     },
 
     initialize: function() {
