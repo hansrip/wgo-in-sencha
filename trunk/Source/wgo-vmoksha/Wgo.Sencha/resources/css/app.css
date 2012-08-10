@@ -9845,3 +9845,7 @@ div.vm-header-logo {
 }
 /*Issues List (End)*/
 
+.clsUsers .x-navigation-bar {
+  display:none;
+}
+

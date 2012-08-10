@@ -12,6 +12,21 @@ Ext.define('Wgo.view.UserList', {
             {
                 title: 'Users', //Title appear in Title bar
                 xtype: 'list',
+                toolbar:{
+                  items: [
+                            {xtype: 'spacer'},
+                            {
+                                iconMask:true,
+                                iconCls: 'add',
+                                ui: 'plain',
+                                align: 'right',
+                                id:'idCABBack',                                
+                                handler: function() {
+                                    console.log('Back Clicked');
+                                }
+                            },
+                            ]
+                },
                 id: 'idUserList', // we are using this inside the controller @ control
                 itemTpl: Ext.create('Ext.XTemplate',
                     '<div class="vm-wgo-monthly-issues">',
