@@ -3,12 +3,14 @@ Ext.define('Wgo.controller.UserController', {
     config: {
         refs: {
             //For the matching component query / xtype, sencha will create a free function for us whose name will be get<KeyName>()            
-            userlist:'userlist' //this will give the instance of 'userlist' view
+            userlist:'userlist', //this will give the instance of 'userlist' view
+            userForm:'#userForm'
         },
         control: {
             'button[action=btnAddUser]' : {tap:"showUserForm"},
             'button[action=btnBack]' : {tap:"showUserList"},
-            'button[action=btnUserSubmit]' : {tap:"btnUserSubmitClick"}
+            'button[action=btnUserSubmit]' : {tap:"btnUserSubmitClick"},
+            '#idUserList': {disclose: 'showEdit'} //"#idUserList" is a component query (can say dom selector)
         }
     },
     //------------------------------------------------------------------------------------------------------------------
@@ -20,10 +22,9 @@ Ext.define('Wgo.controller.UserController', {
     showUserForm: function() {
         //Todo: Detailsview not showingup after first attempt
         console.log("User controller showUserForm(Start)")
-        var auv = Ext.create("Wgo.view.AddUser");        
+        var auv = Ext.create("Wgo.view.AddUser");
         this.getUserlist().push(auv);
-        Ext.getCmp('idBtnAdd').hide();
-        Ext.getCmp('idBtnBack').show();
+        this.toggleAddFormButtons()
         console.log("User controller showDetail(End)")
     },
     showUserList: function() {
@@ -70,11 +71,30 @@ Ext.define('Wgo.controller.UserController', {
         //Ext.Viewport.setActiveItem(Ext.getCmp('userlist'));
         this.showUserList();
 
-    },
-    hideForm: function() {
-        //Ext.Viewport.setActiveItem(Ext.getCmp('main'));
-        //Ext.getCmp('runForm').hide();
-    }
+    }    ,
+    //------------------------------------------------------------------------------------------------------------------
+    showEdit: function(list, record) {
+     debugger;
+    //Todo: Detailsview not showingup after first attempt
+    console.log("User controller showEdit(Start)")
+    var auv = Ext.create("Wgo.view.AddUser");
+        auv.setValues({
+        txtUser: record.get("userName"),
+        txtEmail: record.get("email"),
+        txtPwd: record.get("password")
+    });
+        var but = auv.getAt(3)
+        but.setText("Edit")
+
+        this.getUserlist().push(auv);
+        this.toggleAddFormButtons()
+    console.log("User controller showEdit(End)")
+},
+toggleAddFormButtons : function(){
+    Ext.getCmp('idBtnAdd').hide();
+    Ext.getCmp('idBtnBack').show();
+    //Ext.getCmp('btnUserSubmit').setText("");
+}
 
 
 });
