@@ -7,12 +7,12 @@ Ext.define('Wgo.view.UserList', {
     config: {
         cls:'clsUsers',
         fullscreen: true,
-        iconCls: 'Users',
+        iconCls: 'team',
         title: 'Users', //Icon subtext
         items: [
             {
                 title: 'Users', //Title appear in Title bar
-                xtype: 'list', 
+                xtype: 'list',
                 id: 'idUserList', // we are using this inside the controller @ control
                 itemTpl: Ext.create('Ext.XTemplate',
                     '<div class="vm-wgo-monthly-issues">',
@@ -43,7 +43,7 @@ Ext.define('Wgo.view.UserList', {
                     items: [
                             {xtype: 'spacer'},
                             {   xtype: 'title' ,
-                                title:"Users", 
+                                title:"Users",
                             },
                             {xtype: 'spacer'},
                             {
@@ -52,7 +52,7 @@ Ext.define('Wgo.view.UserList', {
                                 ui: 'plain',
                                 align: 'right',
                                 action:'btnAddUser',
-                                id:'idBtnAdd',                                
+                                id:'idBtnAdd',
                             },
                             {
                                 iconMask:true,
@@ -61,8 +61,8 @@ Ext.define('Wgo.view.UserList', {
                                 hidden:true,
                                 align: 'right',
                                 action:'btnBack',
-                                id:'idBtnBack',                                
-                            },
+                                id:'idBtnBack'
+                            }
                             ]
                 }
             ]

@@ -46,7 +46,9 @@ Ext.define('Wgo.controller.Main', {
             failure: function(result, request) {
                 // Unmask the viewport
                 Ext.Viewport.unmask();
-                Ext.Msg.alert("Network Failure or Time out happened");            }
+                Ext.Viewport.setActiveItem({xtype:'main'},{type: 'slide', direction: 'right'});
+                //Ext.Msg.alert("Network Failure or Time out happened");
+            }
         });
         //console.log("login button tap event (End)");
     },
