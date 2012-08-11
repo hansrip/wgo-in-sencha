@@ -2,12 +2,14 @@ class FestivalsController < ApplicationController
   # GET /festivals
   # GET /festivals.json
   def index
-    @festivals =  Festival.find :all
+    @offset, @limit = api_offset_and_limit
+    @festivals =  Festival.find :all,
+                        :limit  =>  @limit,
+                        :offset =>  @offset
 
     respond_to do |format|
       format.html # index.html.erb
-            format.js  { render :json => @festivals, :callback => params[:callback] }
-      format.json { render json: @festivals, :callback => params[:callback] }
+      format.json { render :json => {:success => true, :Data => @festivals}, :callback => params[:callback] }
     end
   end
 

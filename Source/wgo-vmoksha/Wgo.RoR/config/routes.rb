@@ -1,6 +1,16 @@
-WgoRails::Application.routes.draw do
+WgoRor::Application.routes.draw do
+  
+  match 'users/saveUser' => 'users#saveUser', :as => :saveUser
+  match 'users/destroy/:id' => 'users#destroy', :as => :destroy
+  match 'users/authenticate' => 'users#authenticate', :as => :authenticate
+  match 'users/insertUser' => 'users#insertUser', :as => :insertUser
+  
+  resources :users
+
   resources :festivals
 
+  root :to => 'users#index'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -50,7 +60,7 @@ WgoRails::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'festivals#index'
+  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 

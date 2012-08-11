@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-WgoRails::Application.load_tasks
+WgoRor::Application.load_tasks

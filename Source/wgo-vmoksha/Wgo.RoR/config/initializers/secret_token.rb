@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-WgoRails::Application.config.secret_token = 'c4f901adf7681cb4bc441bed649c673cfe3191fa1f349953486fda74c531bdaae509920e0723d59d6d76c2eda1d41f331c4be2bd8aacd3f56e324ee842f5da1e'
+WgoRor::Application.config.secret_token = 'cb258c6a9eb7e42e836904def0d042961d15f455e80172d7f568582cc766f5f7a5588aa37e7ced394beefae95e57f47f5cb4aba815f7922d40b43a93e832c3eb'
