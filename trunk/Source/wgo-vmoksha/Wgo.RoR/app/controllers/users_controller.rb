@@ -8,7 +8,7 @@ class UsersController < ApplicationController
                         :offset =>  @offset
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => {:success => true, :Data => @users}, :callback => params[:callback] }
+      format.json { render :json => {:Success => true, :Data => @users}, :callback => params[:callback] }
     end
   end
 
@@ -83,31 +83,42 @@ class UsersController < ApplicationController
     end
   end
   
-  # http://wgo-ror.herokuapp.com/users/authenticate?userName=ramy&password=123456
+  # http://localhost:3000/users/authenticate?userName=ramy&password=123456
   def authenticate     
      usr = params[:userName]
      pwd = params[:password]
      @getUser = User.where("userName = ? AND password = ?", params[:userName], params[:password])     
      if (@getUser!=[])       
        respond_to do |format| 
-        format.html { render :json => {:success => true, :Data => @getUser}, :callback => params[:callback] }
-        format.json { render :json => {:success => true, :Data => @getUser}, :callback => params[:callback] }
+        format.html { render :json => {:Success => true, :Data => @getUser}, :callback => params[:callback] }
+        format.json { render :json => {:Success => true, :Data => @getUser}, :callback => params[:callback] }
        end
      else           
       respond_to do |format|
-        format.html { render :json => {:success => false, :Data => @getUser}, :callback => params[:callback] }
-        format.json { render :json => {:success => false, :Data => @getUser}, :callback => params[:callback] }
+        format.html { render :json => {:Success => false, :Data => @getUser}, :callback => params[:callback] }
+        format.json { render :json => {:Success => false, :Data => @getUser}, :callback => params[:callback] }
       end 
      end
   end
   
-  # http://wgo-ror.herokuapp.com/users/insertUser?userName=yrkapil&password=123456&email=yrkapil@gmail.com
+  # http://localhost:3000/users/insertUser?userName=yrkapil&password=123456&email=yrkapil@gmail.com
   def insertUser
-    query = "INSERT INTO users (userName,password,email,created_at,updated_at) VALUES (params[:userName], params[:password], params[:email],current_date,current_date)"
-    ActiveRecord::Base.connection.execute(query); 
+    query = "INSERT INTO users (userName,password,email,created_at,updated_at) VALUES ('#{params[:userName]}', '#{params[:password]}', '#{params[:email]}',current_date,current_date)"
+    ActiveRecord::Base.connection.execute(query)
+    if(ActiveRecord::Base.connection.execute(query))
+      respond_to do |format| 
+          format.html { render :json => {:Success => true}, :callback => params[:callback] }
+          format.json { render :json => {:Success => true}, :callback => params[:callback] }
+         end
+       else           
+        respond_to do |format|
+          format.html { render :json => {:Success => false}, :callback => params[:callback] }
+          format.json { render :json => {:Success => false}, :callback => params[:callback] }
+        end 
+       end 
   end
   
-  # http://wgo-ror.herokuapp.com/users/saveUser?id=1&userName=yrkapil&password=123456&email=yrkapil@gmail.com  
+  # http://localhost:3000/users/saveUser?id=1&userName=yrkapil&password=123456&email=yrkapil@gmail.com  
   def saveUser
      @user = User.find(params[:id])              
      @user.update_attributes(:userName => params[:userName], :password => params[:password], :email => params[:email] )
