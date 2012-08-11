@@ -6,7 +6,7 @@ Ext.define('Wgo.view.IssueList', {
         'Ext.dataview.List'    ],
     config: {
         fullscreen: true,
-        iconCls: 'Issues',
+        iconCls: 'time',
         title: 'Issues', //Icon subtext
         items: [
             {

@@ -9,7 +9,8 @@ Ext.define("Wgo.view.AddUser", {
             {
                 xtype: 'textfield',
                 name: 'txtUser', // We use this to get the values from the form object i.e. form.getValues().txtUserName
-                labelWidth:'0%', 
+                id: 'txtUser',
+                labelWidth:'0%',
                 cls:"vm-txt-usr", //this will decorate the text box with "user" icon and also round bord the form control
                 ClearIcon: false,
                 placeHolder: 'Enter your Username',
@@ -18,6 +19,7 @@ Ext.define("Wgo.view.AddUser", {
             {
                 xtype: 'textfield',
                 name: 'txtEmail', // We use this to get the values from the form object i.e. form.getValues().txtEmail
+                id: 'txtEmail',
                 labelWidth:'0%',
                 cls:"vm-txt-email", //this will decorate the text box with "user" icon and also round bord the form control
                 ClearIcon: false,
@@ -27,6 +29,7 @@ Ext.define("Wgo.view.AddUser", {
             {
                 xtype: 'passwordfield',
                 name: 'txtPwd',
+                id: 'txtPwd',
                 labelWidth:'0%',
                 cls:"vm-txt-pwd",//same as above
                 ClearIcon: false,
