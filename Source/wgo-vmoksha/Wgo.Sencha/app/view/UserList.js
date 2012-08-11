@@ -43,7 +43,7 @@ Ext.define('Wgo.view.UserList', {
                     items: [
                             {xtype: 'spacer'},
                             {   xtype: 'title' ,
-                                title:"Users",
+                                title:"Users"
                             },
                             {xtype: 'spacer'},
                             {
@@ -52,7 +52,7 @@ Ext.define('Wgo.view.UserList', {
                                 ui: 'plain',
                                 align: 'right',
                                 action:'btnAddUser',
-                                id:'idBtnAdd',
+                                id:'idBtnAdd'
                             },
                             {
                                 iconMask:true,
