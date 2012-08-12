@@ -35,6 +35,7 @@ Ext.define('Wgo.controller.UserController', {
         console.log("User controller showUserList(End)")
     },
     btnUserSubmitClick: function() {
+        debugger;
         console.log("User controller btnUserSubmitClick(Start)")
         var username = Ext.getCmp('txtUser').getValue(), // Get form value by Dom identifier
             password = Ext.getCmp('txtPwd').getValue(),
@@ -49,7 +50,7 @@ Ext.define('Wgo.controller.UserController', {
         //a) http://stackoverflow.com/questions/3102819/chrome-disable-same-origin-policy
         //b)
         Ext.Ajax.request({
-            url: 'http://wgo-1.apphb.com/user',
+            url: 'http://wgo-1.apphb.com/user', //http://localhost:4404/user/update/2
             method: 'post',
             type:'json',
             params: {
