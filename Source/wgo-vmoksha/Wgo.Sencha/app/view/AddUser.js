@@ -38,6 +38,7 @@ Ext.define("Wgo.view.AddUser", {
             {
                 xtype: 'button',
                 name: 'btnUserSubmit',
+                id:'btnUserSubmit',
                 action: 'btnUserSubmit', //Find button by action name inside the controller to attach event handlers
                 text: 'Create',
                 width:"100%",
