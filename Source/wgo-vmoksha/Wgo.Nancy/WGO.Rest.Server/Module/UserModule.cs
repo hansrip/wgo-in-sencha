@@ -31,6 +31,20 @@ namespace Nancy.Rest.Server.Module
                 return Response.AsJson(user);
             };
 
+            Get["/update/{id}"] = parameters =>
+            {
+
+                string username = this.Request.Query.username;
+                string email = this.Request.Query.email;
+                long id = parameters.id;
+                //Implement unique username constraint.
+                var user = DocumentSession.Query<User>().Where(x => x.Id == id).FirstOrDefault();
+                user.userName = username;
+                user.email = email;
+                DocumentSession.Store(user);
+                return Response.AsJson(user);
+            };
+
             //List all the employees reporting to a given manager
             Get["/Data/Load"] = parameters =>
             {
