@@ -73,6 +73,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   # DELETE /users/1.json
+  # http://localhost:3000/users/destroy/1
   def destroy
     @user = User.find(params[:id])
     @user.destroy
@@ -83,11 +84,11 @@ class UsersController < ApplicationController
     end
   end
   
-  # http://localhost:3000/users/authenticate?userName=ramy&password=123456
+  # http://localhost:3000/users/authenticate?userName=senthil&password=senthil
   def authenticate     
      usr = params[:userName]
      pwd = params[:password]
-     @getUser = User.where("userName = ? AND password = ?", params[:userName], params[:password])     
+     @getUser = User.where("userName = ? AND password = ?", params[:userName], params[:password])       
      if (@getUser!=[])       
        respond_to do |format| 
         format.html { render :json => {:Success => true, :Data => @getUser}, :callback => params[:callback] }
@@ -122,6 +123,17 @@ class UsersController < ApplicationController
   def saveUser
      @user = User.find(params[:id])              
      @user.update_attributes(:userName => params[:userName], :password => params[:password], :email => params[:email] )
+    if(@user.update_attributes(:userName => params[:userName], :password => params[:password], :email => params[:email] ))
+      respond_to do |format| 
+          format.html { render :json => {:Success => true}, :callback => params[:callback] }
+          format.json { render :json => {:Success => true}, :callback => params[:callback] }
+         end
+       else           
+        respond_to do |format|
+          format.html { render :json => {:Success => false}, :callback => params[:callback] }
+          format.json { render :json => {:Success => false}, :callback => params[:callback] }
+        end 
+    end 
   end 
   
   
