@@ -1,16 +1,18 @@
-WgoRor::Application.routes.draw do
+WgoHungRor::Application.routes.draw do
   
-  match 'users/saveUser' => 'users#saveUser', :as => :saveUser
+  match 'users/saveUser' => 'users#saveUser', :as => :saveUser  
+  match 'users/editUser' => 'users#editUser', :as => :editUser
   match 'users/destroy/:id' => 'users#destroy', :as => :destroy
   match 'users/authenticate' => 'users#authenticate', :as => :authenticate
   match 'users/insertUser' => 'users#insertUser', :as => :insertUser
+  match 'users/:id/update' => 'users#update', :as => :update
   
   resources :users
 
   resources :festivals
 
   root :to => 'users#index'
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

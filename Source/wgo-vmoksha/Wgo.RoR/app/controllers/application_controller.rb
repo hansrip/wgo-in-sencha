@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
+  
   protect_from_forgery
-    
+
   # Returns offset and limit used to retrieve objects
   # for an API response based on offset, limit and page parameters
   def api_offset_and_limit(options=params)
@@ -24,5 +25,5 @@ class ApplicationController < ActionController::Base
 
     [offset, limit]
   end
-  
+
 end

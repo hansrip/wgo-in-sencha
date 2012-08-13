@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
+  # http://wgo-hung-ror.herokuapp.com/users/insertUser
   def index
     @offset, @limit = api_offset_and_limit
     @users =  User.find :all,
@@ -74,6 +75,8 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   # http://localhost:3000/users/destroy/1
+  # http://wgo-hung-ror.herokuapp.com/users/destroy/1
+  # This URL is used to delete or destroy a particular user
   def destroy
     @user = User.find(params[:id])
     @user.destroy
@@ -84,11 +87,12 @@ class UsersController < ApplicationController
     end
   end
   
-  # http://localhost:3000/users/authenticate?userName=senthil&password=senthil
+  # This function is used to authenticate an user
+  # http://localhost:3000/users/authenticate
+  # http://wgo-hung-ror.herokuapp.com/users/authenticate
   def authenticate     
-     usr = params[:userName]
-     pwd = params[:password]
-     @getUser = User.where("userName = ? AND password = ?", params[:userName], params[:password])       
+     # Checking for that particular username and password
+     @getUser = User.where("username = ? AND password = ?", params[:username], params[:password])       
      if (@getUser!=[])       
        respond_to do |format| 
         format.html { render :json => {:Success => true, :Data => @getUser}, :callback => params[:callback] }
@@ -102,9 +106,11 @@ class UsersController < ApplicationController
      end
   end
   
-  # http://localhost:3000/users/insertUser?userName=yrkapil&password=123456&email=yrkapil@gmail.com
+  # This function is used to Create an new User
+  # http://localhost:3000/users/insertUser
+  # http://wgo-hung-ror.herokuapp.com/users/insertUser
   def insertUser
-    query = "INSERT INTO users (userName,password,email,created_at,updated_at) VALUES ('#{params[:userName]}', '#{params[:password]}', '#{params[:email]}',current_date,current_date)"
+    query = "INSERT INTO users (username,password,email,created_at,updated_at) VALUES ('#{params[:username]}', '#{params[:password]}', '#{params[:email]}',current_date,current_date)"
     ActiveRecord::Base.connection.execute(query)
     if(ActiveRecord::Base.connection.execute(query))
       respond_to do |format| 
@@ -119,11 +125,13 @@ class UsersController < ApplicationController
        end 
   end
   
-  # http://localhost:3000/users/saveUser?id=1&userName=yrkapil&password=123456&email=yrkapil@gmail.com  
-  def saveUser
+  # This function is used to edit an existing user and update
+  # http://localhost:3000/users/editUser
+  # http://wgo-hung-ror.herokuapp.com/users/editUser
+  def editUser
      @user = User.find(params[:id])              
-     @user.update_attributes(:userName => params[:userName], :password => params[:password], :email => params[:email] )
-    if(@user.update_attributes(:userName => params[:userName], :password => params[:password], :email => params[:email] ))
+     @user.update_attributes(:username => params[:username], :password => params[:password], :email => params[:email] )
+    if(@user.update_attributes(:username => params[:username], :password => params[:password], :email => params[:email] ))
       respond_to do |format| 
           format.html { render :json => {:Success => true}, :callback => params[:callback] }
           format.json { render :json => {:Success => true}, :callback => params[:callback] }
@@ -134,7 +142,41 @@ class UsersController < ApplicationController
           format.json { render :json => {:Success => false}, :callback => params[:callback] }
         end 
     end 
-  end 
+  end
+  
+  # This function is used to Create an new User or Edit an existing user and update
+  # http://localhost:3000/users/saveUser
+  # http://wgo-hung-ror.herokuapp.com/users/saveUser
+  def saveUser
+    puts params[:id].blank?
+    if(params[:id].blank?)
+       query = "INSERT INTO users (username,password,email,created_at,updated_at) VALUES ('#{params[:username]}', '#{params[:password]}', '#{params[:email]}',current_date,current_date)"       
+       if(ActiveRecord::Base.connection.execute(query))
+         respond_to do |format| 
+             format.html { render :json => {:Success => true}, :callback => params[:callback] }
+             format.json { render :json => {:Success => true}, :callback => params[:callback] }
+         end
+       else           
+           respond_to do |format|
+             format.html { render :json => {:Success => false}, :callback => params[:callback] }
+             format.json { render :json => {:Success => false}, :callback => params[:callback] }
+           end 
+       end
+    else
+        @user = User.find(params[:id])              
+       if(@user.update_attributes(:username => params[:username], :password => params[:password], :email => params[:email] ))
+         respond_to do |format| 
+             format.html { render :json => {:Success => true}, :callback => params[:callback] }
+             format.json { render :json => {:Success => true}, :callback => params[:callback] }
+         end
+       else           
+         respond_to do |format|
+           format.html { render :json => {:Success => false}, :callback => params[:callback] }
+           format.json { render :json => {:Success => false}, :callback => params[:callback] }
+         end       
+       end
+    end  
+  end  
   
   
 end
