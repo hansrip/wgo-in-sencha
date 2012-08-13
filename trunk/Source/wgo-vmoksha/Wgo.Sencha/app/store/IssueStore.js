@@ -11,7 +11,7 @@ Ext.define('Wgo.store.IssueStore', {
         pageSize: 12,
         proxy: {
             type: 'jsonp', //for cross domain calls
-            url : 'http://wgo-1.apphb.com/issues/paginate',
+            url : 'http://wgo-1.apphb.com/issues/paginate', //ROR Url
             reader: {
                 type: 'json'
                 ,rootProperty:'Data' //The result json is (may be) complex and nested objects hence we specify the root property to look for
