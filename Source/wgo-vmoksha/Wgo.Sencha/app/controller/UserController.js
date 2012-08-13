@@ -28,7 +28,8 @@ Ext.define('Wgo.controller.UserController', {
         console.log("User controller showDetail(End)")
     },
     showUserList: function() {
-        console.log("User controller showUserList(Start)")      
+        console.log("User controller showUserList(Start)")
+        debugger;
         this.getUserlist().pop();
         Ext.getCmp('idBtnAdd').show();
         Ext.getCmp('idBtnBack').hide();
@@ -49,6 +50,8 @@ Ext.define('Wgo.controller.UserController', {
         //Reference:
         //a) http://stackoverflow.com/questions/3102819/chrome-disable-same-origin-policy
         //b)
+        //CORS / Cross Domain Request
+        //JSONP
         Ext.Ajax.request({
             url: 'http://wgo-1.apphb.com/user', //http://localhost:4404/user/update/2
             method: 'post',
@@ -61,6 +64,7 @@ Ext.define('Wgo.controller.UserController', {
             callback: this.onAddUserCallback,
             scope: this
         });
+
         //adduser
         console.log("password = [" + password + "]")
         console.log("User controller btnUserSubmitClick (End)")
@@ -72,7 +76,7 @@ Ext.define('Wgo.controller.UserController', {
         //Ext.Viewport.setActiveItem(Ext.getCmp('userlist'));
         this.showUserList();
 
-    }    ,
+    },
     //------------------------------------------------------------------------------------------------------------------
     showEdit: function(list, record) {
      debugger;
