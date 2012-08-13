@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120811084342) do
+ActiveRecord::Schema.define(:version => 20120813094046) do
 
   create_table "festivals", :force => true do |t|
     t.string   "name"
@@ -19,15 +19,15 @@ ActiveRecord::Schema.define(:version => 20120811084342) do
     t.string   "city"
     t.string   "period"
     t.string   "timings"
-    t.string   "telePhone"
+    t.string   "telephone"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
-    t.string   "userName"
-    t.string   "password"
+    t.string   "username"
     t.string   "email"
+    t.string   "password"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
