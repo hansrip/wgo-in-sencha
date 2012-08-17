@@ -6,7 +6,6 @@ Ext.define('Wgo.view.UserList', {
         'Ext.dataview.List'    ],
     config: {
         cls:'clsUsers',
-        fullscreen: true,
         iconCls: 'team',
         title: 'Users', //Icon subtext
         items: [

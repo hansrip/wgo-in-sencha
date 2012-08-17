@@ -6,7 +6,6 @@ Ext.define('Wgo.view.FestivalList', {
         'Ext.dataview.List'
     ],
     config: {
-        fullscreen: true,
         iconCls: 'favorites',
         title: 'Festivals', //Icon subtext
         items: [
