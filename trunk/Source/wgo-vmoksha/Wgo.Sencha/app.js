@@ -4,7 +4,7 @@ Ext.application({
         'Ext.MessageBox'
     ],
     models: ['Festival','Issue','User'],
-    views:  ['Header','Footer','Login','Home', 'Main','FestivalList','IssueList','UserList','AddUser'],
+    views:  ['Header','Footer','Login','Home', 'Main','FestivalList','IssueList','UserList','AddUser','Settings'],
     controllers: ['Main','Festival','UserController'],
     stores: ['FestivalStore','IssueStore','UserStore'],
     icon: {
@@ -36,7 +36,36 @@ Ext.application({
             //Change the index.html background color to white
             Ext.get('wgo-pg-body').setStyle('backgroundColor', 'white');
             /*Todo: Check if authentication ticket already available*/
-            Ext.Viewport.add(Ext.create('Wgo.view.Login'));
+            var mainPageView = Ext.create(Wgo.view.Main);
+
+            var loginPageView = Ext.create(Wgo.view.Login);
+            //getting the local storage item in which we have stored the toggle button value
+            var remMe = localStorage.getItem('rememberUser');
+            //Here we check whether the localStorage item is there or not
+            // if null we redirect to the login page
+            if(remMe != null)
+            {
+                //if  the localStorage item is present we check for the value here
+                //if 1 we retrieve the userData and store it in another localStorage item and restore the home page view
+                //else we redirect to the login page
+                if(remMe == 1)
+                {
+                    var getRememberData = localStorage.getItem('rememberUserLogged');
+                    localStorage.setItem('userData',getRememberData);
+                    Ext.Viewport.add(mainPageView);
+                }
+                else
+                {
+                    localStorage.setItem('rememberUser',0);
+                    Ext.Viewport.add(loginPageView);
+                }
+            }
+            else
+            {
+                localStorage.setItem('rememberUser',0);
+                Ext.Viewport.add(loginPageView);
+            }
+            
         });
         task.delay(100);
         console.log("Application Launch (End)")
