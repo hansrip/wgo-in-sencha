@@ -87,7 +87,7 @@ Ext.define('Wgo.view.Home', {
                         xtype: 'button',
                         html: '<div class="image"><img alt="CAB" src="resources/images/Logout.png" align="center" height="48px" width="48px"></div><div class="vm-dashboard-notes">Logout</div>',
                         width:'33%',
-                        action: 'btnDashboardClick',
+                        action: 'btnDashboardLogoutClick',
                         ui:'round',
                         cls: 'vm-btn-dashboard'
                     }]

@@ -20,7 +20,8 @@ Ext.define('Wgo.view.Main', {
             { xtype: 'home' },
             { xtype: 'issuelist' },
             { xtype: 'festivallist' },
-            { xtype: 'userlist' } 
+            { xtype: 'userlist' },
+            { xtype: 'settings'} 
         ]
     }
 });
