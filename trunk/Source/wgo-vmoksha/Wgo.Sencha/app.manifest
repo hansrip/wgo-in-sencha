@@ -1,0 +1,8 @@
+CACHE MANIFEST
+
+app.js
+sdk/sencha-touch-all.js
+resources/css/app.css
+
+NETWORK:
+*
