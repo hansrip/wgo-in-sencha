@@ -16,7 +16,7 @@ Ext.define('Wgo.view.UserList', {
                 itemTpl: Ext.create('Ext.XTemplate',
                     '<div class="vm-wgo-monthly-issues">',
                     '<img src="resources/images/issues.png" />',
-                    '<div class="issue">{userName}</div>',
+                    '<div class="issue">{username}</div>',
                     '</div>'
                 ),
                 store: 'UserStore',
