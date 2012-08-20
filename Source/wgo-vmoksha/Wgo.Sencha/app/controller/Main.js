@@ -46,7 +46,7 @@ Ext.define('Wgo.controller.Main', {
         var user = form.getValues().txtUserName;
         var pwd = form.getValues().txtPassword;
         console.log("Before Form Submit")
-        /*Ext.util.JSONP.request({
+        Ext.util.JSONP.request({
             url: 'http://wgo-1.apphb.com/authenticate',
             dataType: "jsonp",
             params: {
@@ -67,8 +67,8 @@ Ext.define('Wgo.controller.Main', {
                 Ext.Viewport.setActiveItem({xtype:'main'},{type: 'slide', direction: 'right'});
                 //Ext.Msg.alert("Network Failure or Time out happened");
             }
-        });*/
-        Ext.Ajax.request({            
+        });
+       /* Ext.Ajax.request({
             //url: 'http://wgo-1.apphb.com/authenticate',
             url: 'http://wgo-hung-ror.herokuapp.com/users/authenticate',//RoR URL
             method: 'POST',
@@ -79,7 +79,7 @@ Ext.define('Wgo.controller.Main', {
             },
             callback: this.onAuthenticateCallback, //Why do we add a callback? I should read but it's to tell the client that the Server is ready to send data back? But this seems like we are calling a fn.
             scope: this //What is scope? The scope in which the action should be called.  Unclear what this means. 
-        });
+        });    */
         //console.log("login button tap event (End)");
     },
     //------------------------------------------------------------------------------------------------------------------

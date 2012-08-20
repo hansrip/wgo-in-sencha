@@ -88,6 +88,7 @@ Ext.define('Wgo.controller.UserController', {
         txtEmail: record.get("email"),
         txtPwd: record.get("password")
     });
+        //Hack
         var but = auv.getAt(3)
         but.setText("Edit")
 
