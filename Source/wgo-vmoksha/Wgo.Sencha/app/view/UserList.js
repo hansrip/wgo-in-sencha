@@ -20,6 +20,7 @@ Ext.define('Wgo.view.UserList', {
                     '</div>'
                 ),
                 store: 'UserStore',
+                //store:'AllUsersStore', // Used to fetch data from local storage. To setData from localstorage see initialize function
                 onItemDisclosure: true,
                 plugins: [ //Reference code from "http://stackoverflow.com/questions/7321446/sencha-list-paging-plugin"
                     {
@@ -72,7 +73,10 @@ Ext.define('Wgo.view.UserList', {
         this.callParent();
         //Loading Store on page load
         Ext.getStore('UserStore').load();
-        console.log("User List Initialize (End)")
-
+        // Comment Ext.getStore('UserStore').load(); and uncomment the below two lines
+        // Used when the userlist store is AllUsersStore which fetches data from local storage
+        //var allUsersStore = Ext.getCmp('idUserList').getStore();
+        //allUsersStore.setData(localStorage.allUsersData).load();
+        console.log("User List Initialize (End)");
     }
 });
