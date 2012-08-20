@@ -29,14 +29,14 @@ Ext.define('Wgo.controller.UserController', {
     },
     showUserList: function() {
         console.log("User controller showUserList(Start)")
-        debugger;
+        //debugger;
         this.getUserlist().pop();
         Ext.getCmp('idBtnAdd').show();
         Ext.getCmp('idBtnBack').hide();
         console.log("User controller showUserList(End)")
     },
     btnUserSubmitClick: function() {
-        debugger;
+        //debugger;
         console.log("User controller btnUserSubmitClick(Start)")
         var username = Ext.getCmp('txtUser').getValue(), // Get form value by Dom identifier
             password = Ext.getCmp('txtPwd').getValue(),
@@ -79,7 +79,7 @@ Ext.define('Wgo.controller.UserController', {
     },
     //------------------------------------------------------------------------------------------------------------------
     showEdit: function(list, record) {
-     debugger;
+     //debugger;
     //Todo: Detailsview not showingup after first attempt
     console.log("User controller showEdit(Start)")
     var auv = Ext.create("Wgo.view.AddUser");
