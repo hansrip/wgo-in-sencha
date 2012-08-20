@@ -11,6 +11,7 @@ Ext.define('Wgo.store.IssueStore', {
         pageSize: 12,
         proxy: {
             type: 'jsonp', //for cross domain calls
+            //RoR Issues model yet to be created
             url : 'http://wgo-1.apphb.com/issues/paginate', //ROR Url
             reader: {
                 type: 'json'
