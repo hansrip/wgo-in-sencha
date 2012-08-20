@@ -6,7 +6,7 @@ Ext.application({
     models: ['Festival','Issue','User'],
     views:  ['Header','Footer','Login','Home', 'Main','FestivalList','IssueList','UserList','AddUser','Settings'],
     controllers: ['Main','Festival','UserController'],
-    stores: ['FestivalStore','IssueStore','UserStore'],
+    stores: ['FestivalStore','IssueStore','UserStore','AllUsersStore'],
     icon: {
         '57': 'resources/icons/Icon.png',
         '72': 'resources/icons/Icon~ipad.png',
@@ -36,9 +36,7 @@ Ext.application({
             //Change the index.html background color to white
             Ext.get('wgo-pg-body').setStyle('backgroundColor', 'white');
             /*Todo: Check if authentication ticket already available*/
-            var mainPageView = Ext.create(Wgo.view.Main);
 
-            var loginPageView = Ext.create(Wgo.view.Login);
             //getting the local storage item in which we have stored the toggle button value
             var remMe = localStorage.getItem('rememberUser');
             //Here we check whether the localStorage item is there or not
@@ -50,20 +48,26 @@ Ext.application({
                 //else we redirect to the login page
                 if(remMe == 1)
                 {
+                    console.log('remMe = 1');
                     var getRememberData = localStorage.getItem('rememberUserLogged');
                     localStorage.setItem('userData',getRememberData);
-                    Ext.Viewport.add(mainPageView);
+                    Ext.Viewport.setActiveItem({xtype:'main'},{type: 'slide', direction: 'right'});
+                    //Ext.Viewport.add(mainPageView);
                 }
                 else
                 {
+                    console.log('remMe = 0');
                     localStorage.setItem('rememberUser',0);
-                    Ext.Viewport.add(loginPageView);
+                    //Ext.Viewport.add(loginPageView);
+                    Ext.Viewport.setActiveItem({xtype:'login'},{type: 'slide', direction: 'right'});
                 }
             }
             else
             {
+                console.log('remMe = null');
                 localStorage.setItem('rememberUser',0);
-                Ext.Viewport.add(loginPageView);
+                //Ext.Viewport.add(loginPageView);
+                Ext.Viewport.setActiveItem({xtype:'login'},{type: 'slide', direction: 'right'});
             }
             
         });
