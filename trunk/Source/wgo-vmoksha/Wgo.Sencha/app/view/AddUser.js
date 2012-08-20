@@ -8,6 +8,17 @@ Ext.define("Wgo.view.AddUser", {
         items: [
             {
                 xtype: 'textfield',
+                name: 'txtUserId', // We use this to get the values from the form object i.e. form.getValues().txtUserName
+                id: 'txtUserId',
+                labelWidth:'0%',
+                cls:"vm-txt-usrid", //this will decorate the text box with "user" icon and also round bord the form control
+                ClearIcon: false,
+                hidden:true,// To keep track of the id we use this field
+                disabled:true,                
+                style: 'align: center'
+            },
+            {
+                xtype: 'textfield',
                 name: 'txtUser', // We use this to get the values from the form object i.e. form.getValues().txtUserName
                 id: 'txtUser',
                 labelWidth:'0%',
