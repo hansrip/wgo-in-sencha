@@ -16,6 +16,23 @@ Ext.define('Wgo.controller.Main', {
     //------------------------------------------------------------------------------------------------------------------
     init: function() {
         console.log("Main controller init(Start)");
+        Ext.util.JSONP.request({
+            //url : 'http://wgo-1.apphb.com/user',
+            url: 'http://wgo-hung-ror.herokuapp.com/users.json',//RoR URL
+            dataType: "jsonp",
+            success: function(result, request) {
+                Ext.Viewport.unmask();
+                if (result.Success) {
+                    localStorage.setItem('allUsersData',JSON.stringify(result.Data));
+                }else{
+                    Ext.Msg.alert("Unable to fetch all users data");
+                }
+            },
+            failure: function(result, request) {
+                Ext.Msg.alert("Unable to fetch all users data");
+                //Ext.Msg.alert("Network Failure or Time out happened");
+            }
+        });
         console.log("Main controller init(End)");
     },
     //------------------------------------------------------------------------------------------------------------------
@@ -52,7 +69,8 @@ Ext.define('Wgo.controller.Main', {
             }
         });*/
         Ext.Ajax.request({            
-            url: 'http://localhost:3000/users/authenticate',
+            //url: 'http://wgo-1.apphb.com/authenticate',
+            url: 'http://wgo-hung-ror.herokuapp.com/users/authenticate',//RoR URL
             method: 'POST',
             type:'json',
             params: {
@@ -76,7 +94,6 @@ Ext.define('Wgo.controller.Main', {
         console.log(response.responseText);
         // Parsing the responseText as an object
         var usr = JSON.parse(response.responseText);
-        debugger;
         if(success == true) {
             Ext.Viewport.unmask();
             //Stringifying the parsed object and storing it in localStorage
@@ -114,6 +131,8 @@ Ext.define('Wgo.controller.Main', {
                     fn:function(){
                         localStorage.removeItem("rememberUserLogged");                        
                         localStorage.removeItem('userData');
+                        localStorage.removeItem('allUsersData');
+                        Ext.Viewport.setActiveItem({xtype:'login'},{type: 'slide', direction: 'right'});
                         window.location.reload();
                     }
                 });
@@ -130,6 +149,7 @@ Ext.define('Wgo.controller.Main', {
                         hideAnimation: 'fadeOut',
                         buttons: [{text:'OK',itemId:'ok'}],
                         fn:function(){
+                            Ext.Viewport.setActiveItem({xtype:'login'},{type: 'slide', direction: 'right'});
                             window.location.reload();
                         }
                     });
