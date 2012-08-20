@@ -13,7 +13,8 @@ Ext.define('Wgo.store.UserStore', {
         pageSize: 5,
         proxy: {
             type: 'jsonp', //for cross domain calls
-            url : 'http://wgo-1.apphb.com/user',
+            //url : 'http://wgo-1.apphb.com/user',
+            url : 'http://wgo-hung-ror.herokuapp.com/users.json',//RoR URL
             reader: {
                 type: 'json'
                 ,rootProperty:'Data' //The result json is (may be) complex and nested objects hence we specify the root property to look for
