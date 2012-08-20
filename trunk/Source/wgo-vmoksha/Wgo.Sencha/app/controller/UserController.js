@@ -40,7 +40,8 @@ Ext.define('Wgo.controller.UserController', {
         console.log("User controller btnUserSubmitClick(Start)")
         var username = Ext.getCmp('txtUser').getValue(), // Get form value by Dom identifier
             password = Ext.getCmp('txtPwd').getValue(),
-            email = Ext.getCmp('txtEmail').getValue()
+            email = Ext.getCmp('txtEmail').getValue(),
+            id = Ext.getCmp('txtUserId').getValue() 
         Ext.getCmp('userForm').setMasked({
             xtype: 'loadmask',
             message: 'Adding New user...'
@@ -53,10 +54,12 @@ Ext.define('Wgo.controller.UserController', {
         //CORS / Cross Domain Request
         //JSONP
         Ext.Ajax.request({
-            url: 'http://wgo-1.apphb.com/user', //http://localhost:4404/user/update/2
+            //url: 'http://wgo-1.apphb.com/user', //http://localhost:4404/user/update/2
+            url: 'http://wgo-hung-ror.herokuapp.com/users/saveUser',//RoR url
             method: 'post',
             type:'json',
             params: {
+                id: id,
                 username: username,
                 password: password,
                 email: email
@@ -84,12 +87,13 @@ Ext.define('Wgo.controller.UserController', {
     console.log("User controller showEdit(Start)")
     var auv = Ext.create("Wgo.view.AddUser");
         auv.setValues({
-        txtUser: record.get("userName"),
-        txtEmail: record.get("email"),
-        txtPwd: record.get("password")
+            txtUserId: record.get("id"),
+            txtUser: record.get("username"),
+            txtEmail: record.get("email"),
+            txtPwd: record.get("password")
     });
         //Hack
-        var but = auv.getAt(3)
+        var but = auv.getAt(4)
         but.setText("Edit")
 
         this.getUserlist().push(auv);
