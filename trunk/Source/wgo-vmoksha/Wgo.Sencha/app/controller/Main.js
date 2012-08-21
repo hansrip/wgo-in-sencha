@@ -56,6 +56,10 @@ Ext.define('Wgo.controller.Main', {
             success: function(result, request) {
                 Ext.Viewport.unmask();
                 if (result.Success) {
+                    localStorage.setItem("rememberUser",1);
+                    localStorage.setItem('userData',JSON.stringify(result.Data));
+                    var getUserData = localStorage.getItem('userData');
+                    localStorage.setItem('rememberUserLogged',getUserData);
                     Ext.Viewport.setActiveItem({xtype:'main'},{type: 'slide', direction: 'right'});
                 }else{
                     Ext.Msg.alert("Un authorized access");
