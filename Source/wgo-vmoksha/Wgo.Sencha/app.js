@@ -6,7 +6,7 @@ Ext.application({
     models: ['Festival','Issue','User'],
     views:  ['Header','Footer','Login','Home', 'Main','FestivalList','IssueList','UserList','AddUser','Settings'],
     controllers: ['Main','Festival','UserController'],
-    stores: ['FestivalStore','IssueStore','UserStore','AllUsersStore'],
+    stores: ['FestivalStore','IssueStore','OnlineUserStore','OfflineUserStore','UserStore','AllUsersStore'],
     icon: {
         '57': 'resources/icons/Icon.png',
         '72': 'resources/icons/Icon~ipad.png',
@@ -50,7 +50,7 @@ Ext.application({
                 {
                     console.log('remMe = 1');
                     var getRememberData = localStorage.getItem('rememberUserLogged');
-                    localStorage.setItem('userData',getRememberData);
+                    localStorage.setItem('userData',getRememberData);                    
                     Ext.Viewport.setActiveItem({xtype:'main'},{type: 'slide', direction: 'right'});
                     //Ext.Viewport.add(mainPageView);
                 }
