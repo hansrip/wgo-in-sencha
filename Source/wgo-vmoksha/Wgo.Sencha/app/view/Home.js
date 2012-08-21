@@ -14,7 +14,7 @@ Ext.define('Wgo.view.Home', {
                 items: [
                     {
                         xtype: 'button',
-                        html: '<div class="image"><img alt="CAB" src="resources/images/issues.png" align="center" height="48px" width="48px"></div><div class="vm-dashboard-notes">Home</div>',
+                        html: '<div class="image"><img alt="CAB" src="resources/images/Issues.png" align="center" height="48px" width="48px"></div><div class="vm-dashboard-notes">Home</div>',
                         width:'33%',
                         action: 'btnDashboardClick',
                         ui:'round',

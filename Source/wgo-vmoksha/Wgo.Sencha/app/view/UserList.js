@@ -15,7 +15,7 @@ Ext.define('Wgo.view.UserList', {
                 id: 'idUserList', // we are using this inside the controller @ control
                 itemTpl: Ext.create('Ext.XTemplate',
                     '<div class="vm-wgo-monthly-issues">',
-                    '<img src="resources/images/issues.png" />',
+                    '<img src="resources/images/Issues.png" />',
                     '<div class="issue">{username}</div>',
                     '</div>'
                 ),
