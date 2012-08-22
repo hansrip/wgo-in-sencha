@@ -12,6 +12,16 @@ Ext.define('Wgo.view.Main', {
     config: {
         tabBar: {
         docked: 'bottom',
+
+        /*Attach Tap event*/
+        control : {
+                'tab' : {
+                    tap : function(ev, target){
+                        Wgo.app.fireEvent('ToolBarTap',ev._text);
+                        //console.log("event-tap")
+                    }
+                }
+            },
         layout: {
             type: 'hbox',
             align: 'middle'
@@ -19,7 +29,7 @@ Ext.define('Wgo.view.Main', {
         items: [
             { xtype: 'home' },
             { xtype: 'issuelist' },
-            { xtype: 'festivallist' },
+            { xtype: 'festivallist'},
             { xtype: 'userlist' },
             { xtype: 'settings'} 
         ]
