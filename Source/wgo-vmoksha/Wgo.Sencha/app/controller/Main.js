@@ -11,10 +11,20 @@ Ext.define('Wgo.controller.Main', {
             'button[action=btnLoginSubmit]' : {tap:"submitLoginForm"}, //Uses ComponentQuery selector to find the matching
             'button[action=btnDashboardClick]' : {tap:"btnDashboardClick"},
             'button[action=btnDashboardLogoutClick]' : {tap:"btnDashboardLogoutClick"} //Uses ComponentQuery selector to find the matching
+
         }
     },
     //------------------------------------------------------------------------------------------------------------------
     init: function() {
+
+        Wgo.app.on({
+            ToolBarTap: function(o){
+                debugger;
+            },
+            scope: this
+        });
+
+
         console.log("Main controller init(Start)");
         Ext.util.JSONP.request({
             //url : 'http://wgo-1.apphb.com/user',
@@ -159,7 +169,7 @@ Ext.define('Wgo.controller.Main', {
                     });
             }
         console.log("btnDashboardClick (End)")
-    },
-            
+    }
+    //ToolBarTap : function() {console.log("ToolBarTap")}
         
 });
