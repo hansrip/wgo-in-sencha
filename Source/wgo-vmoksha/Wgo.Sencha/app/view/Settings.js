@@ -21,7 +21,7 @@ Ext.define("Wgo.view.Settings", {
                 labelWidth:'45%',
                 style:"font-size:0.8em;",
                 //setting default value to ON
-                value: 1, 
+                value: 0, 
                 //on toggle of button adding a listener to it                       
                 listeners: {            
                     change:function(value) {

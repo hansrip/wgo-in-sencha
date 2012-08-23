@@ -28,7 +28,7 @@ Ext.define('Wgo.view.FestivalDetail', {
                 + ' <tr>'
                 + '        <td>'
                 + '         <label class="vm-profile vm-profile-key">Telephone</label>'
-                + '         <label class="vm-profile vm-profile-value">{telePhone}</label>'
+                + '         <label class="vm-profile vm-profile-value">{telephone}</label>'
                 + '     </td>'
                 + ' </tr>'
                 + ' <tr>'
