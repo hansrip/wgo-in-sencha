@@ -19,7 +19,7 @@ Ext.define('Wgo.store.OnlineUserStore', {
                 type: 'json',
                 rootProperty:'Data' //The result json is (may be) complex and nested objects hence we specify the root property to look for
             },
-            timeout: 2000,
+            timeout: 5000,
             listeners: {
                 exception:function () {                    
                     console.log("I think we are offline");
