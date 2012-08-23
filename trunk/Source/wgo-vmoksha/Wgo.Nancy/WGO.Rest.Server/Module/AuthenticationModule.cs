@@ -19,7 +19,7 @@ namespace Nancy.Rest.Server.Module
                     string password = this.Request.Query.password;
                     string device = this.Request.Query.device;
                     var user = DocumentSession.Query<User>()
-                        .Where(x => x.userName.Equals(username) && x.password.Equals(password))
+                        .Where(x => x.username.Equals(username) && x.password.Equals(password))
                         .FirstOrDefault();
                     dynamic response = new ExpandoObject();
                     response.Success = !(user == null);
