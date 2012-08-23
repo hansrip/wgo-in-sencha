@@ -7,7 +7,7 @@ namespace Application.Model.Core
 {
    public class User : EntityBase
     {
-       public string userName { get; set; }
+       public string username { get; set; }
        public string password { get; set; }
        public string email { get; set; }  
 

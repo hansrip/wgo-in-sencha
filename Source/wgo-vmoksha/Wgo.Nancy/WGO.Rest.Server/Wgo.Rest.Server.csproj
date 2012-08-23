@@ -162,11 +162,11 @@
     <Compile Include="Module\ModuleBase.cs" />
     <Compile Include="Module\UserModule.cs" />
     <Compile Include="RavenDB\AbstractRavenRepository.cs" />
-    <Compile Include="RavenDB\IIssueRepository.cs" />
-    <Compile Include="RavenDB\IssueRepository.cs" />
     <Compile Include="RavenDB\IFestivalRepository.cs" />
     <Compile Include="RavenDB\FestivalRepository.cs" />
+    <Compile Include="RavenDB\IIssueRepository.cs" />
     <Compile Include="RavenDB\IRavenSessionManager.cs" />
+    <Compile Include="RavenDB\IssueRepository.cs" />
     <Compile Include="RavenDB\IUserRepository.cs" />
     <Compile Include="RavenDB\RavenSessionManager.cs" />
     <Compile Include="RavenDB\RavenSessionModule.cs" />
