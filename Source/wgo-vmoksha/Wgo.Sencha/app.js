@@ -3,6 +3,7 @@ Ext.application({
     requires: [
         'Ext.MessageBox'
     ],
+    token:"",
     models: ['Festival','Issue','User'],
     views:  ['Header','Footer','Login','Home', 'Main','FestivalList','IssueList','UserList','AddUser','Settings'],
     controllers: ['Main','Festival','UserController'],
