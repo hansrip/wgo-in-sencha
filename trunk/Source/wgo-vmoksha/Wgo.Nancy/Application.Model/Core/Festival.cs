@@ -12,7 +12,7 @@ namespace Application.Model.Core
        public string city { get; set; }
        public string period { get; set; }
        public string timings { get; set; }
-       public string telePhone { get; set; }  
+       public string telephone { get; set; }  
        protected override void CheckForBrokenRules()
        {
            throw new NotImplementedException();

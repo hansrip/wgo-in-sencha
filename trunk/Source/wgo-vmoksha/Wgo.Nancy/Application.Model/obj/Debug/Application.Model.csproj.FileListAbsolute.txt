@@ -18,3 +18,8 @@ D:\WGO\Wgo.Nancy9Aug\Application.Model\bin\Debug\Application.Model.pdb
 D:\WGO\Wgo.Nancy9Aug\Application.Model\obj\Debug\ResolveAssemblyReference.cache
 D:\WGO\Wgo.Nancy9Aug\Application.Model\obj\Debug\Application.Model.dll
 D:\WGO\Wgo.Nancy9Aug\Application.Model\obj\Debug\Application.Model.pdb
+D:\Wgo.Nancy\Application.Model\bin\Debug\Application.Model.dll
+D:\Wgo.Nancy\Application.Model\bin\Debug\Application.Model.pdb
+D:\Wgo.Nancy\Application.Model\obj\Debug\ResolveAssemblyReference.cache
+D:\Wgo.Nancy\Application.Model\obj\Debug\Application.Model.dll
+D:\Wgo.Nancy\Application.Model\obj\Debug\Application.Model.pdb

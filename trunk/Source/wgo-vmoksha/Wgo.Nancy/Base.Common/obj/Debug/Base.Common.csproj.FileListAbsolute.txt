@@ -38,3 +38,13 @@ D:\WGO\Wgo.Nancy9Aug\Base.Common\bin\Debug\AsyncCtpLibrary.dll
 D:\WGO\Wgo.Nancy9Aug\Base.Common\obj\Debug\ResolveAssemblyReference.cache
 D:\WGO\Wgo.Nancy9Aug\Base.Common\obj\Debug\Base.Common.dll
 D:\WGO\Wgo.Nancy9Aug\Base.Common\obj\Debug\Base.Common.pdb
+D:\Wgo.Nancy\Base.Common\bin\Debug\Base.Common.dll
+D:\Wgo.Nancy\Base.Common\bin\Debug\Base.Common.pdb
+D:\Wgo.Nancy\Base.Common\bin\Debug\Raven.Client.Lightweight.dll
+D:\Wgo.Nancy\Base.Common\bin\Debug\Newtonsoft.Json.dll
+D:\Wgo.Nancy\Base.Common\bin\Debug\Raven.Abstractions.dll
+D:\Wgo.Nancy\Base.Common\bin\Debug\NLog.dll
+D:\Wgo.Nancy\Base.Common\bin\Debug\AsyncCtpLibrary.dll
+D:\Wgo.Nancy\Base.Common\obj\Debug\ResolveAssemblyReference.cache
+D:\Wgo.Nancy\Base.Common\obj\Debug\Base.Common.dll
+D:\Wgo.Nancy\Base.Common\obj\Debug\Base.Common.pdb
