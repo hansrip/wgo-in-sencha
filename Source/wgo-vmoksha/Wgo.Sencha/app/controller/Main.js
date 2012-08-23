@@ -15,17 +15,66 @@ Ext.define('Wgo.controller.Main', {
         }
     },
     //------------------------------------------------------------------------------------------------------------------
-    init: function() {
+    init: function() {        
+        console.log("Main controller init(Start)");
 
+        // This is the hack for firing the tap event of the tabBar items in the Main View
         Wgo.app.on({
-            ToolBarTap: function(o){
-                debugger;
+            // ToolBarTap is the function name which we are firing in the Main view on tap of tabBar items
+            // The title of the tabBar Item tapped is passed to tab
+            ToolBarTap: function(tab){                               
+                // Checking if the item tapped title matches our requirements
+                // If users sync data from OnlineUserStore to OfflineUserStore and load the store
+                if(tab=="Users")
+                {                    
+                    console.log('Syncing data from OnlineUserStore to OfflineUserStore');
+                    // Getting the online store and storing it in a local variable
+                    var onlineStore = Ext.getStore('OnlineUserStore');
+                    // Getting the offline store and storing it in a local variable
+                    var offlineStore = Ext.getStore('OfflineUserStore'); 
+                    //Adding an listener called 'load' to the Online Store        
+                    onlineStore.addListener('load', function () {            
+                        //Copying records from Online Store to Offline Store
+                        this.each(function (record) {
+                            //For proper syncing of data this is required
+                            //when the store has unchanged data being synced the below must be used to sync the data
+                            //record.phantom = true; // POST Operation
+                            //Reference URL -> http://stackoverflow.com/questions/11360028/problems-with-store-syncing
+                            record.dirty = true;//PUT Operation
+                            //Adding data to Offline Store
+                            offlineStore.add(record.data)[0];
+                        });
+                        //Syncing data to offline store
+                        offlineStore.sync();
+                        console.log(Ext.getCmp('idUserList'));
+                        //Setting store to offlineStore
+                        Ext.getCmp('idUserList').setStore(offlineStore);
+                    });
+                    // Loading the online store
+                    onlineStore.load();      
+                }
+                // if the item tapped title matches Festivals we are loading the festival store.
+                // The festival store is loaded with auth_token as an param
+                else if(tab="Festivals") {
+                    // Getting the festival store and storing it in a local variable
+                    var festivalStore = Ext.getStore('FestivalStore');
+                    // Getting the auth_token from local storage and storing it in a global variable defined in app.js                    
+                    Wgo.app.token = localStorage.getItem('auth_token');
+                    console.log(Wgo.app.token);      
+                    // Loading the store dynamically by passing the token as a query parameter              
+                    festivalStore.load({
+                        // Passing the query string using params
+                        params: {
+                            auth_token: Wgo.app.token
+                        }
+                    });
+                }                
             },
             scope: this
         });
-
-
-        console.log("Main controller init(Start)");
+        
+        // Second way of handling offline data
+        // Call a GET request from RoR and store it in localStorage and retrieving the localStorage data through AllUsersStore
         Ext.util.JSONP.request({
             //url : 'http://wgo-1.apphb.com/user',
             url: 'http://wgo-hung-ror.herokuapp.com/users.json',//RoR URL
@@ -33,6 +82,7 @@ Ext.define('Wgo.controller.Main', {
             success: function(result, request) {
                 Ext.Viewport.unmask();
                 if (result.Success) {
+                    // Storing data locally into a variable called allUsersData
                     localStorage.setItem('allUsersData',JSON.stringify(result.Data));
                 }else{
                     Ext.Msg.alert("Unable to fetch all users data");
@@ -56,7 +106,8 @@ Ext.define('Wgo.controller.Main', {
         var user = form.getValues().txtUserName;
         var pwd = form.getValues().txtPassword;
         console.log("Before Form Submit")
-        Ext.util.JSONP.request({
+        // GET request to WebService URL
+        /*Ext.util.JSONP.request({
             url: 'http://wgo-1.apphb.com/authenticate',
             dataType: "jsonp",
             params: {
@@ -66,7 +117,7 @@ Ext.define('Wgo.controller.Main', {
             success: function(result, request) {
                 Ext.Viewport.unmask();
                 if (result.Success) {
-                    localStorage.setItem("rememberUser",1);
+                    localStorage.setItem("rememberUser",0);
                     localStorage.setItem('userData',JSON.stringify(result.Data));
                     var getUserData = localStorage.getItem('userData');
                     localStorage.setItem('rememberUserLogged',getUserData);
@@ -81,19 +132,21 @@ Ext.define('Wgo.controller.Main', {
                 Ext.Viewport.setActiveItem({xtype:'main'},{type: 'slide', direction: 'right'});
                 //Ext.Msg.alert("Network Failure or Time out happened");
             }
-        });
-       /* Ext.Ajax.request({
+        });*/
+        // POST request to Webservice
+        Ext.Ajax.request({
             //url: 'http://wgo-1.apphb.com/authenticate',
-            url: 'http://wgo-hung-ror.herokuapp.com/users/authenticate',//RoR URL
-            method: 'POST',
+            //url: 'http://wgo-hung-ror.herokuapp.com/users/authenticate',//RoR URL            
+            url: 'http://wgo-vmoksha-devise.herokuapp.com/api/v1/tokens.json',// RoR URL using Devise and Token Authentication
+            method: 'POST',// method should always be POST for Token Authentication to work
             type:'json',
             params: {
                 username: user,
                 password: pwd
             },
-            callback: this.onAuthenticateCallback, //Why do we add a callback? I should read but it's to tell the client that the Server is ready to send data back? But this seems like we are calling a fn.
-            scope: this //What is scope? The scope in which the action should be called.  Unclear what this means. 
-        });    */
+            callback: this.onAuthenticateCallback, //We add a callback to keep track of the response and what intend to do on success and failure
+            scope: this //The scope:this will restrict us to this controller.this contains the controller
+        }); 
         //console.log("login button tap event (End)");
     },
     //------------------------------------------------------------------------------------------------------------------
@@ -104,17 +157,25 @@ Ext.define('Wgo.controller.Main', {
         console.log("btnDashboardClick (End)")
     },
     onAuthenticateCallback: function(options, success, response) {
-        console.log(success); 
-        console.log(response.responseText);
         // Parsing the responseText as an object
-        var usr = JSON.parse(response.responseText);
+        // var usr = JSON.parse(response.responseText);
+        // Creating an object out of the response text
+        var authToken = JSON.parse(response.responseText);
         if(success == true) {
             Ext.Viewport.unmask();
             //Stringifying the parsed object and storing it in localStorage
-            localStorage.setItem('userData',JSON.stringify(usr.Data));
-            var getUserData = localStorage.getItem('userData');
-            localStorage.setItem('rememberUserLogged',getUserData);
-            localStorage.setItem('rememberUser',1);
+            //localStorage.setItem('userData',JSON.stringify(usr.Data));
+            //var getUserData = localStorage.getItem('userData');
+            //localStorage.setItem('rememberUserLogged',getUserData);
+            // Storing the auth_token in localStorage
+            // We are storing it here because if the settings is ON it directly loads the Main View which loses track of the token 
+            localStorage.setItem('auth_token',authToken.token);
+            // Storing the auth_token in global variable
+            Wgo.app.token = authToken.token;
+            console.log("Global Variable Token : "+Wgo.app.token);
+            // Setting the default value of Keep Me Logged In? to OFF
+            localStorage.setItem('rememberUser',0);
+            // Redirecting to Login Page on successful login
             Ext.Viewport.setActiveItem({xtype:'main'},{type: 'slide', direction: 'right'});
         }
         else {
