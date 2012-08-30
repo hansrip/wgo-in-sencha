@@ -10,21 +10,47 @@ Ext.define('Wgo.controller.UserController', {
             'button[action=btnAddUser]' : {tap:"showUserForm"},
             'button[action=btnBack]' : {tap:"showUserList"},
             'button[action=btnUserSubmit]' : {tap:"btnUserSubmitClick"},
+            'button[action=btnUserSync]' : {tap:"btnUserSyncClick"},
             '#idUserList': {disclose: 'showEdit'} //"#idUserList" is a component query (can say dom selector)
         }
     },    
     //------------------------------------------------------------------------------------------------------------------
     init: function() {
         console.log("User controller init(Start)")
+        // getting the local storage variable into an local variable 
+        var offlineDataStorage = localStorage.getItem('concatenatedUserData');
+        console.log(offlineDataStorage);
+        // Checking whether the local variable is null or not
+        if(offlineDataStorage!=null)
+        {
+            // if not null assign the data to global variable
+            Wgo.app.allData = offlineDataStorage; 
+        }
+        else 
+        {   
+            // else make the global variable as null
+            Wgo.app.allData = '';        
+        }            
         console.log("User controller init(End)")
     },
     //------------------------------------------------------------------------------------------------------------------
     showUserForm: function() {
         //Todo: Detailsview not showingup after first attempt
-        console.log("User controller showUserForm(Start)")
-        var auv = Ext.create("Wgo.view.AddUser");
+        console.log("User controller showUserForm(Start)")        
+        auv = Ext.create("Wgo.view.AddUser");        
+        if(navigator.onLine != true)
+        {
+            console.log('Online');
+            console.log(auv);
+        }
+        else
+        {
+            console.log('Offline');
+            auv.items.items[4].setWidth('50%');
+            auv.items.items[5].setHidden(false);
+        }
         this.getUserlist().push(auv);
-        this.toggleAddFormButtons()
+        this.toggleAddFormButtons();
         console.log("User controller showDetail(End)")
     },
     showUserList: function() {
@@ -55,31 +81,146 @@ Ext.define('Wgo.controller.UserController', {
         });
         // Loading the online store
         onlineStore.load();
+        //Get the length of the offlineStorage to set the Badge dynamically
+        if(localStorage.offlineUserData!='')
+        {
+            var badgeDataLength = JSON.parse(localStorage.offlineUserData).length;
+            console.log(badgeDataLength);
+            // Setting the badge text dynamically by getting the user tab bar item
+            Ext.getCmp('idMain').getTabBar().getItems().items[3].setBadgeText(badgeDataLength);
+        }
+        else
+        {
+            Ext.getCmp('idMain').getTabBar().getItems().items[3].setBadgeText('0');
+        }
         // Popping out the Add/Edit User form 
         this.getUserlist().pop();
         // Toggling the Back to Add button
         Ext.getCmp('idBtnAdd').show();
-        Ext.getCmp('idBtnBack').hide();         
+        Ext.getCmp('idBtnBack').hide();        
         console.log("User controller showUserList(End)");
     },
     btnUserSubmitClick: function() {
         //debugger;
+        console.log(navigator.onLine);
         console.log("User controller btnUserSubmitClick(Start)")
-        var username = Ext.getCmp('txtUser').getValue(), // Get form value by Dom identifier
+        /*var username = Ext.getCmp('txtUser').getValue(), // Get form value by Dom identifier
             password = Ext.getCmp('txtPwd').getValue(),
             email = Ext.getCmp('txtEmail').getValue(),
-            id = Ext.getCmp('txtUserId').getValue() 
+            id = Ext.getCmp('txtUserId').getValue() */
+      
         Ext.getCmp('userForm').setMasked({
             xtype: 'loadmask',
             message: 'Adding New user...'
         });
-        //Run with "chrome.exe --disable-web-security" to allow cross domain call (recommended for development)
-        //PhoneGap supports Cross Domain.
-        //Reference:
-        //a) http://stackoverflow.com/questions/3102819/chrome-disable-same-origin-policy
-        //b)
-        //CORS / Cross Domain Request
-        //JSONP
+
+        if(navigator.onLine!=true)
+        {
+            console.log("Online");
+            // getting all the form values into a local variable
+            var userFormVal = this.getUserForm().getValues(); 
+            console.log(userFormVal);
+            // stringifying all the local variable object data
+            var userVal = JSON.stringify(userFormVal);
+            //Run with "chrome.exe --disable-web-security" to allow cross domain call (recommended for development)
+            //PhoneGap supports Cross Domain.
+            //Reference:
+            //a) http://stackoverflow.com/questions/3102819/chrome-disable-same-origin-policy
+            //b)
+            //CORS / Cross Domain Request
+            //JSONP
+            Ext.Ajax.request({
+                //url: 'http://wgo-1.apphb.com/user', //http://localhost:4404/user/update/2
+                url: 'http://wgo-hung-ror.herokuapp.com/users.json',//RoR url
+                method: 'post',
+                type:'json',
+                params: {
+                    'user': userVal
+                },
+                callback: this.onAddUserCallback,
+                scope: this
+            });            
+        }
+        else
+        {
+            console.log("Offline");
+            // getting all the form values into a local variable
+            var userFormVals = this.getUserForm().getValues();             
+            console.log(userFormVals);
+            // getting the offline storage to get the values which are stored when user is offline
+            var offlineData = localStorage.getItem('offlineUserData');
+            // stringifying all the localStorage data
+            userDataStringified = JSON.stringify(userFormVals);
+            console.log(userDataStringified);
+            // check if global variable is null
+            if(Wgo.app.allData == '')
+            {
+                // if null assign the stringified data
+                Wgo.app.allData = userDataStringified;
+            }
+            else
+            {
+                // if not null we have to append the data so we seperate the data using comma
+                Wgo.app.allData = Wgo.app.allData + ',';                
+                // After appending a comma add the newly created offline data to the global variable
+                Wgo.app.allData += userDataStringified;
+            }            
+            console.log(Wgo.app.allData);
+            // Add the global variable data to another local storage variable
+            localStorage.setItem('concatenatedUserData',  Wgo.app.allData );
+            // Add  the same to offline User data ALSO but with a particular json format
+            localStorage['offlineUserData'] = '[' + Wgo.app.allData + ']';
+            //Get the length of the offlineStorage to set the Badge dynamically
+            var badgeDataLength = JSON.parse(localStorage.offlineUserData).length;
+            console.log(badgeDataLength);
+            // Setting the badge text dynamically by getting the user tab bar item
+            Ext.getCmp('idMain').getTabBar().getItems().items[3].setBadgeText(badgeDataLength);
+            // setting the user form masked as false to prevent it from further masking
+            Ext.getCmp('userForm').setMasked(false);  
+            this.showUserList();            
+        }       
+
+        console.log("User controller btnUserSubmitClick (End)")
+    },
+    btnUserSyncClick: function() {
+        // checking whether the browser is online or offline
+         Ext.getCmp('userForm').setMasked({
+            xtype: 'loadmask',
+            message: 'Syncing Offline to Online...'
+        });
+        console.log(navigator.onLine);
+        //Getting the values from the localStorage to sync 
+        var syncData = localStorage.getItem('offlineUserData');
+        //Parsing the data of localStorage
+        var parseSyncData = JSON.parse(syncData);
+        // checking whether the browser is online or offline
+        if(navigator.onLine == true)
+        {
+            //If online sync all the data to the online by calling an AJAX request
+            for (i=0;i<parseSyncData.length;i++)
+            {               
+               //AJAX request to post all the data and create new records
+               Ext.Ajax.request({
+                    //url: 'http://wgo-1.apphb.com/user', //http://localhost:4404/user/update/2
+                    url: 'http://wgo-hung-ror.herokuapp.com/users.json',//RoR url
+                    method: 'post',
+                    type:'json',
+                    params: {
+                    'user': JSON.stringify(parseSyncData[i])//Stringifying and passing the entire user model
+                    },
+                    callback: this.onAddOfflineUserCallback,//to track the response
+                    scope: this
+                }); 
+            }
+        }
+        else
+        {
+            Ext.Msg.alert('Unable to sync now as you are offline');
+        }
+        /*Ext.getCmp('userForm').setMasked({
+            xtype: 'loadmask',
+            message: 'Adding New user...'
+        });
         Ext.Ajax.request({
             //url: 'http://wgo-1.apphb.com/user', //http://localhost:4404/user/update/2
             url: 'http://wgo-hung-ror.herokuapp.com/users/saveUser',//RoR url
@@ -93,55 +234,55 @@ Ext.define('Wgo.controller.UserController', {
             },
             callback: this.onAddUserCallback,
             scope: this
-        });
-
-        //adduser
-        console.log("password = [" + password + "]")
-        console.log("User controller btnUserSubmitClick (End)")
-    },
+        });  */          
+    },    
     onAddUserCallback: function(options, success, response) {
-        console.log(success);
-        var userString;        
-        var username = Ext.getCmp('txtUser').getValue(), // Get form value by Dom identifier
-            password = Ext.getCmp('txtPwd').getValue(),
-            email = Ext.getCmp('txtEmail').getValue(),
-            id = Ext.getCmp('txtUserId').getValue() 
+        console.log(success);        
         if(success==true)
         {
             Ext.getCmp('userForm').setMasked(false);
             //Ext.getStore('UserStore').load();
             //Ext.Viewport.setActiveItem(Ext.getCmp('userlist'));
             // Calling the showUserList function to pop the Add/Edit User form and display the UserList
+            this.showUserList();            
+        }
+        else
+        {
+            Ext.getCmp('userForm').setMasked(false);
+            Ext.Msg.alert('Unable to connect');
+        }
+    },
+    onAddOfflineUserCallback: function(options, success, response) {
+        console.log(success);
+        if(success==true)
+        {            
+            // removing offline stored data on success as it is no longer required
+            localStorage.setItem('offlineUserData','');
+            localStorage.setItem('concatenatedUserData','')
             this.showUserList();
         }
         else
         {
-            userString +='{"id":"'+id+'","username":"'+username+'","password":"'+password+'","email":"'+email+'"}';
-            console.log(userString);
-            console.log('true');
-            var records=[];
-            records[0]=JSON.parse(userString);
-            localStorage['records']=JSON.stringify(records[0]);
+            Ext.Msg.alert('Unable to connect');
         }
     },
     //------------------------------------------------------------------------------------------------------------------
     showEdit: function(list, record) {
-         //debugger;
         //Todo: Detailsview not showingup after first attempt
         console.log("User controller showEdit(Start)")
-        var auv = Ext.create("Wgo.view.AddUser");
-            auv.setValues({
-                txtUserId: record.get("id"),
-                txtUser: record.get("username"),
-                txtEmail: record.get("email"),
-                txtPwd: record.get("password")
+        var auvEdit = Ext.create("Wgo.view.AddUser");
+            auvEdit.setValues({
+                id: record.get("id"),
+                username: record.get("username"),
+                email: record.get("email"),
+                password: record.get("password")
         });
             //Hack
-            var but = auv.getAt(4)
-            but.setText("Edit")
+        var but = auvEdit.getAt(4)
+        but.setText("Edit")
 
-            this.getUserlist().push(auv);
-            this.toggleAddFormButtons()
+        this.getUserlist().push(auvEdit);
+        this.toggleAddFormButtons()
         console.log("User controller showEdit(End)")
     },
     toggleAddFormButtons : function(){
