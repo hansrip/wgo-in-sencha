@@ -6570,8 +6570,8 @@ audio {
 .x-hasbadge .x-badge {
   -webkit-background-clip: padding;
   background-clip: padding-box;
-  -webkit-border-radius: 0.2em;
-  border-radius: 0.2em;
+  -webkit-border-radius: 0.8em;
+  border-radius: 0.8em;
   padding: .1em .3em;
   z-index: 2;
   text-shadow: rgba(0, 0, 0, 0.5) 0 -0.08em 0;
@@ -9848,4 +9848,3 @@ div.vm-header-logo {
 .clsUsers .x-navigation-bar {
   display:none;
 }
-
