@@ -4,11 +4,11 @@ Ext.define("Wgo.view.AddUser", {
     id: 'userForm',
     config: {
         cls:"vm-form",  //this class will override sencha's form background color to white",
-        scrollable:true,
+        scrollable:true,        
         items: [
             {
                 xtype: 'textfield',
-                name: 'txtUserId', // We use this to get the values from the form object i.e. form.getValues().txtUserName
+                name: 'id', // We use this to get the values from the form object i.e. form.getValues().txtUserName
                 id: 'txtUserId',
                 labelWidth:'0%',
                 cls:"vm-txt-usrid", //this will decorate the text box with "user" icon and also round bord the form control
@@ -19,7 +19,7 @@ Ext.define("Wgo.view.AddUser", {
             },
             {
                 xtype: 'textfield',
-                name: 'txtUser', // We use this to get the values from the form object i.e. form.getValues().txtUserName
+                name: 'username', // We use this to get the values from the form object i.e. form.getValues().txtUserName
                 id: 'txtUser',
                 labelWidth:'0%',
                 cls:"vm-txt-usr", //this will decorate the text box with "user" icon and also round bord the form control
@@ -29,7 +29,7 @@ Ext.define("Wgo.view.AddUser", {
             },
             {
                 xtype: 'textfield',
-                name: 'txtEmail', // We use this to get the values from the form object i.e. form.getValues().txtEmail
+                name: 'email', // We use this to get the values from the form object i.e. form.getValues().txtEmail
                 id: 'txtEmail',
                 labelWidth:'0%',
                 cls:"vm-txt-email", //this will decorate the text box with "user" icon and also round bord the form control
@@ -39,7 +39,7 @@ Ext.define("Wgo.view.AddUser", {
             },
             {
                 xtype: 'passwordfield',
-                name: 'txtPwd',
+                name: 'password',
                 id: 'txtPwd',
                 labelWidth:'0%',
                 cls:"vm-txt-pwd",//same as above
@@ -53,7 +53,19 @@ Ext.define("Wgo.view.AddUser", {
                 action: 'btnUserSubmit', //Find button by action name inside the controller to attach event handlers
                 text: 'Create',
                 width:"100%",
+                style:'float:left;',
                 ui: 'confirm' //Green Theme
+            },
+            {
+                xtype: 'button',
+                name: 'btnUserSync',
+                id:'btnUserSync',
+                action: 'btnUserSync', //Find button by action name inside the controller to attach event handlers
+                text: 'Sync',
+                hidden:true,
+                width:"50%",
+                style:'float:left;',
+                ui: 'round' //Green Theme
             }
         ]
     },
