@@ -3,11 +3,13 @@ Ext.define('Wgo.view.UserList', {
     xtype: 'userlist',
     requires: [
         'Wgo.store.IssueStore',
-        'Ext.dataview.List'    ],
+        'Ext.dataview.List' ],
     config: {
         cls:'clsUsers',
         iconCls: 'team',
+        id:'idUserListConfig',
         title: 'Users', //Icon subtext
+        badgeText: '0',
         items: [
             {
                 title: 'Users', //Title appear in Title bar
@@ -71,13 +73,6 @@ Ext.define('Wgo.view.UserList', {
     initialize: function() {
         console.log("User List Initialize (Start)");
         this.callParent();
-        //Loading Store on page load
-        //Ext.getStore('UserStore').load();
-        // Comment Ext.getStore('UserStore').load(); and uncomment the below two lines
-        // Used when the userlist store is AllUsersStore which fetches data from local storage
-        //var allUsersStore = Ext.getCmp('idUserList').getStore();
-        //allUsersStore.setData(localStorage.allUsersData).load();
-        //Getting the Online Store and Offline Store
         console.log("User List Initialize (End)");
     }
 });
