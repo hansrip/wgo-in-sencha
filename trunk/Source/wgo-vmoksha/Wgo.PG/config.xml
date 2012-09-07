@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns	= "http://www.w3.org/ns/widgets"
+	xmlns:gap	= "http://phonegap.com/ns/1.0"
+	id		    = "com.vmoksha.wgo"
+	version 	= "1.0">
+
+	<name>What's Going On?</name>	
+
+	<description>
+        	What's Going On Mobile Application
+	</description>
+
+	<author href="http://www.senthilsweb.com/" email="senthilnathank@vmokshagroup.com">
+		Senthilnathan K
+	</author>
+  
+	<preference name="orientation" value="default" />
+	
+	<feature name="http://api.phonegap.com/1.0/network"/>
+
+  <icon src="icon.png" width="57" height="57" />
+
+  <gap:splash src="splash.png" /> 
+  
+  <gap:splash src="splash/ios/Default-Landscape.png" width="1024" height="768" />
+  <gap:splash src="splash/ios/Default-Portrait.png" width="768" height="1024" />
+  <gap:splash src="splash/ios/Default.png" width="320" height="480" />
+  <gap:splash src="splash/ios/Default_2x.png" width="640" height="960" />
+
+</widget>
