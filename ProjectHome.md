@@ -1,0 +1,1 @@
+A concept application to bring city local events into smart phones and tablets using popular open source cross platform mobile hybrid application development framework "Sencha Touch2" and Web Framework "Ruby On Rails"
